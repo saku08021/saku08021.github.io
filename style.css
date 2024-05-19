@@ -1,0 +1,221 @@
+/* Basic Styling */
+body {
+  font-family: '游ゴシック体', 'Yu Gothic', Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden; /* 横スクロールバーを非表示 */
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+  position: relative; /* パーティクルを配置するため */
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* テキストの背後に配置 */
+}
+
+/* About Me */
+#about {
+  padding: 4rem 0;
+  background-color: #fff;
+}
+
+/* Portfolio */
+#portfolio {
+  padding: 4rem 0;
+  background-color: #f5f5f5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.item {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+  perspective: 800px; /* 3D回転のための視点を設定 */
+}
+
+.item:hover {
+  transform: translateY(-5px) rotateY(15deg); /* 3D回転を追加 */
+}
+
+.item i {
+  font-size: 3rem;
+  color: #2980b9;
+  margin-bottom: 1rem;
+}
+
+/* Skills */
+#skills {
+  padding: 4rem 0;
+  background-color: #fff;
+}
+
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill {
+  margin-bottom: 1rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  background-color: #2980b9;
+  width: 0; /* 初期状態は幅0% */
+  transition: width 1s ease; /* アニメーションの設定 */
+}
+
+.skill:hover .skill-level {
+  width: 100%; /* ホバー時に幅100%まで拡大 */
+}
+
+/* Services */
+#services {
+  padding: 4rem 0;
+  background-color: #f5f5f5;
+}
+
+#services ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+#services li {
+  background-color: #fff;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+#services li:hover {
+  transform: translateY(-5px);
+}
+
+#services li i {
+  font-size: 2rem;
+  color: #2980b9;
+  margin-right: 1rem;
+}
+
+/* Contact */
+#contact {
+  padding: 4rem 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+/* Button */
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #2980b9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #3498db;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+}
