@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>山川 朔弥 | ポートフォリオ</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -29,20 +31,13 @@
         <h2>実績</h2>
         <div class="achievement-grid">
           <div class="achievement-block" data-aos="fade-up">
-            <h3>SNS運用</h3>
-            <p>Twitterフォロワー 0 → 130,000人</p>
-            <p>Instagramフォロワー 0 → 50,000人</p>
-            <p>YouTubeチャンネル登録者 0 → 20,000人</p>
+            <img src="assets/images/achievement1.png" alt="実績1のイラスト"> <p>Twitterフォロワー 0 → 130,000人</p>
           </div>
           <div class="achievement-block" data-aos="fade-up" data-aos-delay="100">
-            <h3>売上向上</h3>
-            <p>担当コンテンツ売上 3ヶ月で200%増加</p>
-            <p>リード獲得数増加により売上200%達成</p>
+            <img src="assets/images/achievement2.png" alt="実績2のイラスト"> <p>担当コンテンツ売上 3ヶ月で200%増加</p>
           </div>
           <div class="achievement-block" data-aos="fade-up" data-aos-delay="200">
-            <h3>開発</h3>
-            <p>Saasツール新規開発 → リリース</p>
-            <p>AIイラスト生成ツール開発</p>
+            <img src="assets/images/achievement3.png" alt="実績3のイラスト"> <p>Saasツール新規開発 → リリース</p>
           </div>
         </div>
       </div>
@@ -53,20 +48,24 @@
         <h2>スキルセット</h2>
         <div class="skill-grid">
           <div class="skill-box" data-aos="fade-up">
+            <img src="assets/images/skill1.png" alt="スキル1のイラスト">
             <h3>SNSマーケティング</h3>
-            <p>Twitter, Instagram, YouTube, Facebookなどの運用経験</p>
+            <p>Twitter、Instagram、YouTube、Facebookなど、様々なプラットフォームでのSNS運用経験が豊富です。エンゲージメント率向上、フォロワー増加、効果的な広告戦略など、お客様のニーズに合わせた戦略を立案し、実行します。</p>
           </div>
           <div class="skill-box" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/images/skill2.png" alt="スキル2のイラスト">
             <h3>Webデザイン</h3>
-            <p>Figma, Photoshop, Illustratorを用いたデザイン制作</p>
+            <p>Figma、Photoshop、Illustratorなどを用いたWebデザイン制作が可能です。ユーザーエクスペリエンスを重視し、お客様のブランドイメージに合った、美しく、使いやすいWebサイトをデザインいたします。</p>
           </div>
           <div class="skill-box" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/images/skill3.png" alt="スキル3のイラスト">
             <h3>Web開発</h3>
-            <p>HTML, CSS, JavaScript, Python, Reactなどの開発経験</p>
+            <p>HTML、CSS、JavaScript、Python、Reactなどを用いたWeb開発経験があります。フロントエンドからバックエンドまで、幅広い開発に対応可能です。お客様の要望を丁寧にヒアリングし、最適なシステムを構築いたします。</p>
           </div>
           <div class="skill-box" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/images/skill4.png" alt="スキル4のイラスト">
             <h3>AI技術</h3>
-            <p>Midjourney, Stable DiffusionなどAIツールを用いたイラスト生成</p>
+            <p>Midjourney、Stable Diffusionなど、AIツールを用いたイラスト生成や、AI技術を活用したツール開発を行っております。最新のAI技術を駆使し、クリエイティブな表現や業務効率化を実現します。</p>
           </div>
         </div>
       </div>
@@ -75,13 +74,28 @@
     <section class="portfolio" id="portfolio">
       <div class="container">
         <h2>ポートフォリオ</h2>
-        <ul class="portfolio-list">
-          <li><a href="portfolio/design/index.html">デザイン</a></li>
-          <li><a href="portfolio/development/index.html">開発</a></li>
-          <li><a href="portfolio/operation/index.html">運用</a></li>
-          <li><a href="portfolio/ai_illustration/index.html">AIイラスト</a></li>
-          <li><a href="portfolio/ai_tools/index.html">AIツール</a></li>
-        </ul>
+        <div class="portfolio-grid">
+          <a href="portfolio/design/index.html" class="portfolio-block" data-aos="fade-up">
+            <i class="fas fa-palette"></i>
+            <h3>デザイン</h3>
+          </a>
+          <a href="portfolio/development/index.html" class="portfolio-block" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-code"></i>
+            <h3>開発</h3>
+          </a>
+          <a href="portfolio/operation/index.html" class="portfolio-block" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-chart-line"></i>
+            <h3>運用</h3>
+          </a>
+          <a href="portfolio/ai_illustration/index.html" class="portfolio-block" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-image"></i>
+            <h3>AIイラスト</h3>
+          </a>
+          <a href="portfolio/ai_tools/index.html" class="portfolio-block" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-robot"></i>
+            <h3>AIツール</h3>
+          </a>
+        </div>
       </div>
     </section>
 
