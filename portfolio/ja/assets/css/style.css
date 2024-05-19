@@ -1,0 +1,105 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #181818;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #282828;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.hero {
+    background-image: url("assets/images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.achievements {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.achievement-block {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 20px;
+    background-color: #282828;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.skills {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.skill-box {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 20px;
+    background-color: #282828;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.portfolio ul {
+    list-style: none;
+    padding: 0;
+}
+
+.portfolio li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.contact {
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #282828;
+    padding: 20px 0;
+    text-align: center;
+}
