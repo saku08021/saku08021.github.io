@@ -98,7 +98,7 @@ header p {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  text-align: left; /* 文字を左寄せ */
+  text-align: center;
 }
 
 .achievement-block:hover {
@@ -106,16 +106,15 @@ header p {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.achievement-block img {
-  max-width: 100px; /* イラストの最大幅を調整 */
-  height: auto;
+.achievement-block i {
+  font-size: 3em;
+  color: #00FFFF;
   margin-bottom: 15px;
 }
 
 .achievement-block p {
   font-size: 1.1em;
-  margin-bottom: 0; /* 下の余白を削除 */
-  color: #00FFFF;
+  margin-bottom: 0;
 }
 
 /* スキルセットセクション */
@@ -133,7 +132,7 @@ header p {
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2列に変更 */
+  grid-template-columns: repeat(2, 1fr); /* 2x2レイアウトに変更 */
   gap: 30px;
 }
 
@@ -143,8 +142,7 @@ header p {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  color: #fff; /* テキストの色を白に */
-  text-align: left; /* 文字を左寄せ */
+  text-align: center;
 }
 
 .skill-box:hover {
@@ -152,21 +150,23 @@ header p {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.skill-box img {
-  max-width: 100px;
-  height: auto;
+.skill-box i {
+  font-size: 3em;
+  color: #00FFFF;
   margin-bottom: 15px;
 }
 
 .skill-box h3 {
   font-size: 1.5em;
   margin-bottom: 10px;
-  color: #fff; /* 見出しの色を白に */
+  color: #fff; /* テキストの色を白に */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* 文字に縁取りを追加 */
 }
 
 .skill-box p {
   font-size: 1.1em;
-  margin-bottom: 0; /* 下の余白を削除 */
+  margin-bottom: 0;
+  color: #fff; /* テキストの色を白に */
 }
 
 /* ポートフォリオセクション */
@@ -197,7 +197,7 @@ header p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center; /* 文字を中央寄せ */
+  text-align: center;
 }
 
 .portfolio-block:hover {
@@ -213,7 +213,7 @@ header p {
 
 .portfolio-block h3 {
   font-size: 1.5em;
-  margin-bottom: 0; /* 下の余白を削除 */
+  margin-bottom: 0;
 }
 
 /* お問い合わせセクション */
