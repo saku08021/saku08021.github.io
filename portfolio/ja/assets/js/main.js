@@ -9,19 +9,19 @@ const links = document.querySelectorAll('a[href^="#"]');
 
 links.forEach(link => {
   link.addEventListener('click', function(event) {
-      event.preventDefault();
+    event.preventDefault();
 
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
 
-      targetElement.scrollIntoView({
-          behavior: 'smooth'
-      });
+    targetElement.scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 });
 
-// ホバー時のアニメーション (実績、スキルセット)
-const blocks = document.querySelectorAll('.achievement-block, .skill-box');
+// ホバー時のアニメーション (実績、スキルセット、ポートフォリオ)
+const blocks = document.querySelectorAll('.achievement-block, .skill-box, .portfolio-block');
 
 blocks.forEach(block => {
   block.addEventListener('mouseover', () => {
