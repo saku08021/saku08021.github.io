@@ -1,38 +1,49 @@
-/* 基本スタイル */
+/* 基本設定 */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #181818;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #222;
     color: #fff;
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
 
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+a {
+    color: #00FFFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* ヘッダー */
 header {
-    background-color: #282828;
-    padding: 20px 0;
+    background: linear-gradient(to right, #8A2BE2, #00FFFF);
+    padding: 30px 0;
     text-align: center;
 }
 
-h1 {
+header h1 {
     font-size: 3em;
     margin: 0;
-    font-weight: bold;
 }
 
-p {
+header p {
     font-size: 1.2em;
-    margin-bottom: 1em;
+    margin-bottom: 0;
 }
 
 /* ヒーローセクション */
 .hero {
-    background-image: url("assets/images/hero-bg.jpg");
-    background-size: cover;
-    background-position: center;
     padding: 100px 0;
     text-align: center;
+    background: linear-gradient(to bottom, #222, #111);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
 .hero-content {
@@ -40,81 +51,125 @@ p {
     margin: 0 auto;
 }
 
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
 .btn {
-    background-color: #007bff;
+    background-color: #8A2BE2;
     color: #fff;
-    padding: 10px 20px;
+    padding: 15px 30px;
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #6900D6;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* 実績セクション */
+/* 実績、スキルセット、ポートフォリオセクション */
+.achievements, .skills, .portfolio {
+    padding: 80px 0;
+    text-align: center;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+}
+
 .achievements {
-    padding: 50px 0;
+    background-color: #111;
 }
 
-.achievement-grid {
+.skills {
+    background: linear-gradient(to right, #00FFFF, #8A2BE2);
+}
+
+.portfolio {
+    background-color: #222;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.achievement-grid, .skill-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 30px;
 }
 
-.achievement-block {
-    padding: 20px;
-    background-color: #282828;
+.achievement-block, .skill-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-/* スキルセットセクション */
-.skills {
-    padding: 50px 0;
+.achievement-block:hover, .skill-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.skill-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.achievement-block h3, .skill-box h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #00FFFF;
 }
 
-.skill-box {
-    padding: 20px;
-    background-color: #282828;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.achievement-block p, .skill-box p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
 }
 
-/* ポートフォリオセクション */
-.portfolio {
-    padding: 50px 0;
-}
-
+/* ポートフォリオリスト */
 .portfolio-list {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-.portfolio li {
-    margin: 0;
+.portfolio-list li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-list li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
 }
 
 /* お問い合わせセクション */
 .contact {
-    padding: 50px 0;
+    padding: 80px 0;
+    text-align: center;
+    background-color: #111;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.contact p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
 /* フッター */
 footer {
-    background-color: #282828;
+    background-color: #000;
     padding: 20px 0;
     text-align: center;
 }
@@ -130,5 +185,9 @@ footer {
 @media screen and (max-width: 768px) {
     .achievement-grid, .skill-grid {
         grid-template-columns: 1fr;
+    }
+
+    .portfolio-list {
+        justify-content: space-around;
     }
 }
