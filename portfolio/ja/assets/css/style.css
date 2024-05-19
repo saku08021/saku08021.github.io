@@ -1,11 +1,14 @@
+/* 基本スタイル */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #181818;
     color: #fff;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
+/* ヘッダー */
 header {
     background-color: #282828;
     padding: 20px 0;
@@ -23,6 +26,7 @@ p {
     margin-bottom: 1em;
 }
 
+/* ヒーローセクション */
 .hero {
     background-image: url("assets/images/hero-bg.jpg");
     background-size: cover;
@@ -50,56 +54,81 @@ p {
     background-color: #0056b3;
 }
 
+/* 実績セクション */
 .achievements {
     padding: 50px 0;
-    text-align: center;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .achievement-block {
-    display: inline-block;
-    margin: 0 20px;
     padding: 20px;
     background-color: #282828;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* スキルセットセクション */
 .skills {
     padding: 50px 0;
-    text-align: center;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .skill-box {
-    display: inline-block;
-    margin: 0 20px;
     padding: 20px;
     background-color: #282828;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* ポートフォリオセクション */
 .portfolio {
     padding: 50px 0;
-    text-align: center;
 }
 
-.portfolio ul {
+.portfolio-list {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .portfolio li {
-    display: inline-block;
-    margin: 0 10px;
+    margin: 0;
 }
 
+/* お問い合わせセクション */
 .contact {
     padding: 50px 0;
-    text-align: center;
 }
 
+/* フッター */
 footer {
     background-color: #282828;
     padding: 20px 0;
     text-align: center;
+}
+
+/* コンテンツエリア */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+    .achievement-grid, .skill-grid {
+        grid-template-columns: 1fr;
+    }
 }
