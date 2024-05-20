@@ -84,10 +84,16 @@ header p {
   text-align: center;
 }
 
-.hero h2 {
+.hero-message h2 {
   font-size: 2.5em;
+  margin-bottom: 0px;
+}
+
+.hero-message h1 {
+  font-size: 4em;
   margin-bottom: 20px;
 }
+
 
 .btn {
   background-color: #8A2BE2;
@@ -132,6 +138,7 @@ header p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   text-align: center;
+  aspect-ratio: 1 / 1;
 }
 
 .achievement-block:hover {
@@ -143,6 +150,8 @@ header p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .achievement-item i {
@@ -180,6 +189,7 @@ header p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   text-align: center;
+  aspect-ratio: 1 / 1;
 }
 
 .skill-box:hover {
@@ -189,14 +199,17 @@ header p {
 
 .skill-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%;
   margin-bottom: 10px; /* アイコンとタイトルの間隔 */
 }
 
 .skill-item i {
-  font-size: 2em;
+  font-size: 3em;
   color: #00FFFF;
-  margin-right: 10px; /* アイコンとタイトルの間隔 */
+  margin-bottom: 10px; /* アイコンとタイトルの間隔 */
 }
 
 .skill-item h3 {
@@ -299,6 +312,7 @@ header p {
   margin-bottom: 30px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .contact h2 i {
@@ -338,4 +352,20 @@ footer {
   .achievement-grid, .skill-grid, .portfolio-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* フォーム */
+.form-item {
+  margin-bottom: 15px;
+}
+
+.form-item input[type="text"],
+.form-item input[type="email"],
+.form-item textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #181818; /* 入力欄の背景色 */
+  color: #eee; /* 入力欄のテキスト色 */
 }
