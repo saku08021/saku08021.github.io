@@ -38,6 +38,17 @@ header p {
   margin-bottom: 0;
 }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content i {
+  margin-right: 10px; /* アイコンと文字の間隔 */
+}
+
+
 /* ヒーローセクション */
 .hero {
   padding: 100px 0;
@@ -128,13 +139,17 @@ header p {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.achievement-block i {
-  font-size: 3em;
-  color: #00FFFF;
-  margin-bottom: 15px;
+.achievement-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.achievement-block p {
+.achievement-item i {
+  margin-bottom: 10px;
+}
+
+.achievement-item p {
   font-size: 1.1em;
   margin-bottom: 0;
 }
@@ -172,13 +187,19 @@ header p {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.skill-box i {
-  font-size: 3em;
-  color: #00FFFF;
-  margin-bottom: 15px;
+.skill-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* アイコンとタイトルの間隔 */
 }
 
-.skill-box h3 {
+.skill-item i {
+  font-size: 2em;
+  color: #00FFFF;
+  margin-right: 10px; /* アイコンとタイトルの間隔 */
+}
+
+.skill-item h3 {
   font-size: 1.5em;
   margin-bottom: 10px;
   color: #fff; /* テキストの色を白に */
@@ -249,13 +270,19 @@ header p {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.portfolio-block i {
-  font-size: 3em;
-  color: #00FFFF;
-  margin-bottom: 15px;
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.portfolio-block h3 {
+.portfolio-item i {
+  font-size: 3em;
+  color: #00FFFF;
+  margin-bottom: 10px;
+}
+
+.portfolio-item h3 {
   font-size: 1.5em;
   margin-bottom: 0;
 }
@@ -270,7 +297,14 @@ header p {
 .contact h2 {
   font-size: 2.5em;
   margin-bottom: 30px;
+  display: flex;
+  align-items: center;
 }
+
+.contact h2 i {
+  margin-right: 10px;
+}
+
 
 .contact p {
   font-size: 1.2em;
@@ -282,6 +316,14 @@ footer {
   background-color: #000;
   padding: 20px 0;
   text-align: center;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  margin: 0 5px; /* アイコンの間隔 */
 }
 
 /* コンテンツエリア */
