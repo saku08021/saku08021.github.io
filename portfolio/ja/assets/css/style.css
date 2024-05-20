@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  overflow-x: hidden; /* 横スクロールバーを非表示 */
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -18,17 +18,17 @@ h1, h2 {
 }
 
 p {
-  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif; 
+  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
 }
 
 a {
   color: #00FFFF;
   text-decoration: none;
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #6900D6; 
+  color: #6900D6;
 }
 
 /* ヘッダー */
@@ -36,8 +36,8 @@ header {
   background: linear-gradient(to right, #00c6ff, #0072ff);
   padding: 30px 0;
   text-align: center;
-  position: relative; /* ヒーローセクションとの境界線を調整するために必要 */
-  z-index: 2; /* ヒーローセクションより上に表示 */
+  position: relative;
+  z-index: 2;
 }
 
 header h1 {
@@ -63,10 +63,10 @@ header p {
 
 /* ヒーローセクション */
 .hero {
-  padding: 150px 0; /* 上下の余白を調整 */
+  padding: 150px 0; 
   text-align: center;
-  background: linear-gradient(135deg, #141e30, #243b55);
-  height: 400px; /* 高さを調整 */
+  background-color: #0072ff; 
+  height: 400px;
   overflow: hidden;
   position: relative;
 }
@@ -75,30 +75,41 @@ header p {
   content: '';
   position: absolute;
   top: 0;
-  left: -10%; /* 左にずらして斜めのラインを作成 */
-  width: 110%; /* 幅を少し広げて隙間を埋める */
+  left: -50%; 
+  width: 150%; 
   height: 100%;
-  background: linear-gradient(to bottom, #00c6ff, #0072ff); /* グラデーションを追加 */
-  transform: skewY(-5deg); /* ヒーローセクションの境界線を斜めに */
-  z-index: 1; /* ヘッダーより下に表示 */
+  background: linear-gradient(to bottom right, #242424, #000); 
+  transform: skewY(-10deg); 
+  z-index: 1; 
 }
 
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -50%; 
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(to top left, #242424, #000); 
+  transform: skewY(-10deg); 
+  z-index: 1; 
+}
 
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
-  position: relative; /* ヒーローセクション::beforeより上に表示 */
+  position: relative;
   z-index: 2;
-}
-
-.hero-message h2 {
-  font-size: 2.5em;
-  margin-bottom: 0px;
-  color: #fff;
 }
 
 .hero-message h1 {
   font-size: 4em;
+  margin-bottom: 0px;
+  color: #fff;
+}
+
+.hero-message h2 {
+  font-size: 2em;
   margin-bottom: 20px;
   color: #fff;
 }
@@ -139,15 +150,15 @@ header p {
 }
 
 .achievement-block {
-  background-color: #242424; /* 背景色を濃いグレーに */
+  background-color: #242424;
   padding: 30px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   text-align: center;
   aspect-ratio: 1 / 1;
-  position: relative; /* グラデーションの背景を配置するために必要 */
-  overflow: hidden; /* グラデーションがはみ出さないように */
+  position: relative;
+  overflow: hidden; 
 }
 
 .achievement-block::before {
@@ -157,8 +168,8 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom right, #00c6ff, #0072ff); /* グラデーションを追加 */
-  opacity: 0.2; /* グラデーションの不透明度を調整 */
+  background: linear-gradient(to bottom right, #00c6ff, #0072ff); 
+  opacity: 0.2;
 }
 
 .achievement-block:hover {
@@ -172,7 +183,7 @@ header p {
   align-items: center;
   justify-content: center;
   height: 100%;
-  position: relative; /* グラデーションの背景より上に表示 */
+  position: relative; 
   z-index: 1;
 }
 
@@ -201,13 +212,13 @@ header p {
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
 .skill-box {
-  background-color: rgba(0, 0, 0, 0.2); 
-  padding: 15px; /* 余白を減らす */
+  background-color: rgba(0, 0, 0, 0);
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -226,49 +237,28 @@ header p {
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-bottom: 5px; 
 }
 
 .skill-item i {
-  font-size: 3em;
+  font-size: 4em; /* アイコンサイズを大きく */
   color: #00FFFF;
-  margin-bottom: 5px; 
+  margin-bottom: 10px;
 }
 
 .skill-item h3 {
-  font-size: 1.5em;
-  margin-bottom: 5px;
-  color: #fff; 
+  font-size: 1.8em; /* タイトルサイズを大きく */
+  margin-bottom: 10px; /* タイトルと説明文の間隔を広げる */
+  color: #fff;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .skill-box p {
-  font-size: 0.9em;
+  font-size: 1em; /* 説明文のフォントサイズを少し大きく */
   margin-bottom: 0;
-  color: #fff; 
+  color: #fff;
 }
 
-/* スキルバー */
-.skill-bar {
-  width: 100%;
-  height: 10px;
-  background-color: #333;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 10px;
-  background: linear-gradient(to right, #00c6ff, #0072ff); 
-}
-
-.skill-bar-fill {
-  height: 100%;
-  background-color: #fff;
-  animation: fill-bar 2s ease forwards; 
-}
-
-@keyframes fill-bar {
-  from { width: 0; }
-  to { width: 100%; }
-}
+/* スキルバー削除 */
 
 
 /* ポートフォリオセクション */
