@@ -1,8 +1,8 @@
 /* 基本設定 */
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #121212; /* 背景: 暗いグレー */
-  color: #eee; /* テキスト: 明るいグレー */
+  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif; /* 日本語フォントを指定 */
+  background-color: #121212; 
+  color: #eee; 
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -12,18 +12,27 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
+h1, h2 {
+  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+}
+
+p {
+  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif; /* 本文は明朝体 */
+}
+
 a {
   color: #00FFFF;
   text-decoration: none;
+  transition: color 0.3s ease; /* ホバー時のアニメーションを追加 */
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #6900D6; /* ホバー時の色を濃い青紫に変更 */
 }
 
 /* ヘッダー */
 header {
-  background: linear-gradient(to right, #8A2BE2, #00FFFF);
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* グラデーションを調整 */
   padding: 30px 0;
   text-align: center;
 }
@@ -45,7 +54,7 @@ header p {
 }
 
 .header-content i {
-  margin-right: 10px; /* アイコンと文字の間隔 */
+  margin-right: 10px;
 }
 
 
@@ -53,25 +62,10 @@ header p {
 .hero {
   padding: 100px 0;
   text-align: center;
-  background: linear-gradient(to bottom, #222, #111);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  position: relative; /* パララックス効果のために必要 */
+  background: linear-gradient(135deg, #141e30, #243b55); /* 幾何学模様風の背景に */
   height: 600px;
-  overflow: hidden; /* 背景画像がはみ出さないように */
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('hero-background.jpg'); /* 背景画像を設定 */
-  background-size: cover;
-  background-attachment: fixed; /* パララックス効果 */
-  z-index: -1; /* テキストの背後に配置 */
-  filter: brightness(0.5); /* 画像を暗く */
+  overflow: hidden;
+  position: relative;
 }
 
 .hero-content {
@@ -87,13 +81,14 @@ header p {
 .hero-message h2 {
   font-size: 2.5em;
   margin-bottom: 0px;
+  color: #fff;
 }
 
 .hero-message h1 {
   font-size: 4em;
   margin-bottom: 20px;
+  color: #fff;
 }
-
 
 .btn {
   background-color: #8A2BE2;
@@ -107,7 +102,7 @@ header p {
 }
 
 .btn:hover {
-  background-color: #6900D6;
+  background-color: #6900D6; 
   transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -116,7 +111,6 @@ header p {
 .achievements {
   padding: 80px 0;
   text-align: center;
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
   background-color: #111;
 }
 
@@ -133,7 +127,7 @@ header p {
 
 .achievement-block {
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 15px; /* 余白を減らす */
+  padding: 15px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -155,6 +149,8 @@ header p {
 }
 
 .achievement-item i {
+  font-size: 3em;
+  color: #fff; /* アイコンの色を白に変更 */
   margin-bottom: 10px;
 }
 
@@ -167,8 +163,7 @@ header p {
 .skills {
   padding: 80px 0;
   text-align: center;
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-  background: linear-gradient(to right, #00FFFF, #8A2BE2);
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* グラデーションを調整 */
 }
 
 .skills h2 {
@@ -178,13 +173,13 @@ header p {
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2x2レイアウトに変更 */
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
 .skill-box {
-  background-color: rgba(0, 0, 0, 0.2); /* 背景色を暗く変更 */
-  padding: 20px; /* 余白を減らす */
+  background-color: rgba(0, 0, 0, 0.2); 
+  padding: 20px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -203,26 +198,26 @@ header p {
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-bottom: 5px; /* アイコンとタイトルの間隔を減らす */
+  margin-bottom: 5px; 
 }
 
 .skill-item i {
   font-size: 3em;
   color: #00FFFF;
-  margin-bottom: 5px; /* アイコンとタイトルの間隔を減らす */
+  margin-bottom: 5px;
 }
 
 .skill-item h3 {
   font-size: 1.5em;
-  margin-bottom: 5px; /* タイトルと説明文の間隔を減らす */
-  color: #fff; /* テキストの色を白に */
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* 文字に縁取りを追加 */
+  margin-bottom: 5px;
+  color: #fff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .skill-box p {
-  font-size: 0.9em; /* 説明文のフォントサイズを小さく */
+  font-size: 0.9em; 
   margin-bottom: 0;
-  color: #fff; /* テキストの色を白に */
+  color: #fff; 
 }
 
 /* スキルバー */
@@ -233,12 +228,13 @@ header p {
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 10px;
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* グラデーションをスキルバーに適用 */
 }
 
 .skill-bar-fill {
   height: 100%;
-  background-color: #00FFFF; /* スキルバーの色 */
-  animation: fill-bar 2s ease forwards; /* アニメーションを追加 */
+  background-color: #fff; /* スキルバーの色を白に */
+  animation: fill-bar 2s ease forwards; 
 }
 
 @keyframes fill-bar {
@@ -251,7 +247,6 @@ header p {
 .portfolio {
   padding: 80px 0;
   text-align: center;
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
   background-color: #222;
 }
 
