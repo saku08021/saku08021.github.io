@@ -13,7 +13,7 @@
       <div class="header-content">
         <i class="fas fa-user-circle fa-2x"></i> <span>山川 朔弥</span>
       </div>
-      <p>あなたのビジネスを加速させる、マーケティングパートナー</p>
+      <p>Webマーケティングでビジネスを成功へ導く</p>
     </div>
   </header>
 
@@ -21,8 +21,8 @@
     <div class="container">
       <div class="hero-content">
         <div class="hero-message" data-aos="fade-up">
+          <h1>山川 朔弥</h1>
           <h2>結果を出すマーケター</h2> 
-          <h1>山川 朔弥</h1> 
         </div>
       </div>
     </div>
@@ -35,18 +35,19 @@
         <div class="achievement-block" data-aos="fade-up">
           <div class="achievement-item">
             <i class="fas fa-users fa-3x"></i>
-            <p>Twitterフォロワー<br>0 → <span class="count">130000</span>人</p> </div>
+            <p>Twitterフォロワー<br><span class="count">130000</span>人達成</p>
+          </div>
         </div>
         <div class="achievement-block" data-aos="fade-up" data-aos-delay="100">
           <div class="achievement-item">
             <i class="fas fa-chart-line fa-3x"></i>
-            <p>担当コンテンツ売上<br>3ヶ月で<span class="count">200</span>%増加</p>
+            <p>コンテンツ売上<br>3ヶ月で<span class="count">200</span>%増加</p>
           </div>
         </div>
         <div class="achievement-block" data-aos="fade-up" data-aos-delay="200">
           <div class="achievement-item">
             <i class="fas fa-rocket fa-3x"></i>
-            <p>Saasツール新規開発<br>→ リリース</p>
+            <p>SaaSツール開発<br>リリース</p>
           </div>
         </div>
       </div>
@@ -61,41 +62,29 @@
           <div class="skill-item">
             <i class="fab fa-twitter fa-3x"></i>
             <h3>SNSマーケティング</h3>
+            <p>Twitter, Instagram, Youtubeなど様々な<br>プラットフォームでの運用経験が豊富です。</p>
           </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" style="width: 90%;"></div>
-          </div>
-          <p>Twitter、Instagram、YouTube、Facebookなど、様々なプラットフォームでのSNS運用経験が豊富です。</p>
         </div>
         <div class="skill-box" data-aos="fade-up" data-aos-delay="100">
           <div class="skill-item">
             <i class="fas fa-palette fa-3x"></i>
             <h3>Webデザイン</h3>
+            <p>Figma, Photoshop, Illustratorなどを用いた<br>Webデザイン制作が可能です</p>
           </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" style="width: 80%;"></div>
-          </div>
-          <p>Figma、Photoshop、Illustratorなどを用いたWebデザイン制作が可能です。</p>
         </div>
         <div class="skill-box" data-aos="fade-up" data-aos-delay="200">
           <div class="skill-item">
             <i class="fas fa-code fa-3x"></i>
             <h3>Web開発</h3>
+            <p>HTML, CSS, Javascript, Python, Reactなどを<br>用いたWeb開発経験があります。</p>
           </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" style="width: 70%;"></div>
-          </div>
-          <p>HTML、CSS、JavaScript、Python、Reactなどを用いたWeb開発経験があります。</p>
         </div>
         <div class="skill-box" data-aos="fade-up" data-aos-delay="300">
           <div class="skill-item">
             <i class="fas fa-robot fa-3x"></i>
             <h3>AI技術</h3>
+            <p>Midjourney, Stable Diffusionなど、AIツールを<br>用いたイラスト生成やツール開発を行っています</p>
           </div>
-          <div class="skill-bar">
-            <div class="skill-bar-fill" style="width: 60%;"></div>
-          </div>
-          <p>Midjourney、Stable Diffusionなど、AIツールを用いたイラスト生成や、AI技術を活用したツール開発を行っております。</p>
         </div>
       </div>
     </div>
@@ -177,23 +166,35 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> <script src="assets/js/main.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
     
     // カウントアップアニメーション
-    $('.count').each(function () {
-      $(this).prop('Counter',0).animate({
-          Counter: $(this).text()
-      }, {
-          duration: 1000,
-          easing: 'swing',
-          step: function (now) {
-              $(this).text(Math.ceil(now));
+    function countUp(className) {
+      let elements = document.querySelectorAll(className);
+      
+      elements.forEach(element => {
+        let targetNumber = parseInt(element.textContent, 10);
+        let currentNumber = 0;
+        let duration = 1500; // アニメーション時間(ミリ秒)
+        let increment = targetNumber / (duration / 10); // 10msごとに増加させる値
+        
+        let timer = setInterval(() => {
+          currentNumber += increment;
+          element.textContent = Math.ceil(currentNumber);
+          
+          if (currentNumber >= targetNumber) {
+            clearInterval(timer);
+            element.textContent = targetNumber;
           }
+        }, 10);
       });
-    });
+    }
+    
+    countUp('.count');
+    
   </script>
 </body>
 </html>
