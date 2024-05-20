@@ -35,13 +35,12 @@
         <div class="achievement-block" data-aos="fade-up">
           <div class="achievement-item">
             <i class="fas fa-users fa-3x"></i>
-            <p>Twitterフォロワー<br>0 → 130,000人</p>
-          </div>
+            <p>Twitterフォロワー<br>0 → <span class="count">130000</span>人</p> </div>
         </div>
         <div class="achievement-block" data-aos="fade-up" data-aos-delay="100">
           <div class="achievement-item">
             <i class="fas fa-chart-line fa-3x"></i>
-            <p>担当コンテンツ売上<br>3ヶ月で200%増加</p>
+            <p>担当コンテンツ売上<br>3ヶ月で<span class="count">200</span>%増加</p>
           </div>
         </div>
         <div class="achievement-block" data-aos="fade-up" data-aos-delay="200">
@@ -182,6 +181,19 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+    
+    // カウントアップアニメーション
+    $('.count').each(function () {
+      $(this).prop('Counter',0).animate({
+          Counter: $(this).text()
+      }, {
+          duration: 1000,
+          easing: 'swing',
+          step: function (now) {
+              $(this).text(Math.ceil(now));
+          }
+      });
+    });
   </script>
 </body>
 </html>
