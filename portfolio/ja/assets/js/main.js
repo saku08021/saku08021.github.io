@@ -34,3 +34,18 @@ blocks.forEach(block => {
     block.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
   });
 });
+
+// 実績のカウントアップアニメーション
+$(document).ready(function() {
+  $('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 1500, // アニメーション時間
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+  });
+});
