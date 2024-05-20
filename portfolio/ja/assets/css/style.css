@@ -133,7 +133,7 @@ header p {
 
 .achievement-block {
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 30px;
+  padding: 15px; /* 余白を減らす */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -184,7 +184,7 @@ header p {
 
 .skill-box {
   background-color: rgba(0, 0, 0, 0.2); /* 背景色を暗く変更 */
-  padding: 30px;
+  padding: 20px; /* 余白を減らす */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -203,24 +203,24 @@ header p {
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-bottom: 10px; /* アイコンとタイトルの間隔 */
+  margin-bottom: 5px; /* アイコンとタイトルの間隔を減らす */
 }
 
 .skill-item i {
   font-size: 3em;
   color: #00FFFF;
-  margin-bottom: 10px; /* アイコンとタイトルの間隔 */
+  margin-bottom: 5px; /* アイコンとタイトルの間隔を減らす */
 }
 
 .skill-item h3 {
   font-size: 1.5em;
-  margin-bottom: 10px;
+  margin-bottom: 5px; /* タイトルと説明文の間隔を減らす */
   color: #fff; /* テキストの色を白に */
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* 文字に縁取りを追加 */
 }
 
 .skill-box p {
-  font-size: 1.1em;
+  font-size: 0.9em; /* 説明文のフォントサイズを小さく */
   margin-bottom: 0;
   color: #fff; /* テキストの色を白に */
 }
