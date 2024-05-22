@@ -86,6 +86,7 @@ header p {
   background-color: #0072ff;
   overflow: hidden;
   position: relative;
+  box-shadow: 0px 10px 15px -5px rgba(0, 198, 255, 0.5); 
 }
 
 .career::before {
@@ -116,7 +117,7 @@ header p {
 
 .career-item {
   padding: 30px;
-  background-color: #0072ff; /* 背景色をセクションと同じに */
+  background-color: #0072ff; 
   border-radius: 10px;
   text-align: center;
 }
@@ -129,10 +130,10 @@ header p {
 
 /* 実績セクション */
 .achievements {
-  padding: 50px 0 80px 0; 
+  padding: 50px 0 80px 0;
   text-align: center;
   background-color: #111;
-  position: relative; 
+  position: relative;
 }
 
 .achievements::before {
@@ -142,9 +143,20 @@ header p {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  height: 30px; 
-  background: radial-gradient(circle at center, #00c6ff, #121212); 
+  height: 4px; /* 境界線の高さを調整 */
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  animation: wave 4s linear infinite alternate; /* アニメーションを追加 */
 }
+
+@keyframes wave {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 10px; /* 上下する幅 */
+  }
+}
+
 
 .achievements h2 {
   font-size: 2.5em;
@@ -227,8 +239,18 @@ header p {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  height: 30px; 
-  background: radial-gradient(circle at center, #121212, #111); 
+  height: 4px; /* 境界線の高さを調整 */
+  background: linear-gradient(to right, #111, #242424);
+  animation: wave 4s linear infinite alternate; /* アニメーションを追加 */
+}
+
+@keyframes wave {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 10px; /* 上下する幅 */
+  }
 }
 
 .skills h2 {
@@ -289,7 +311,7 @@ header p {
   padding: 50px 0 80px 0; 
   text-align: center;
   background-color: #222;
-  position: relative; 
+  position: relative;
 }
 
 .portfolio::before {
@@ -299,8 +321,18 @@ header p {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  height: 30px;
-  background: radial-gradient(circle at center, #00c6ff, #121212);
+  height: 4px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  animation: wave 4s linear infinite alternate;
+}
+
+@keyframes wave {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 10px;
+  }
 }
 
 .portfolio h2 {
@@ -413,6 +445,6 @@ footer {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #181818;
+  background-color: #181818; 
   color: #eee; 
 }
