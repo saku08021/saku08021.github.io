@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>山川 朔弥 | ポートフォリオ</title>
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,14 +17,21 @@
     </div>
   </header>
 
-  <section class="hero">
+  <section class="career" id="career">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-message" data-aos="fade-up">
-          <h1>未来を創造する<br>Webマーケティング</h1>
-          <h2>ユーザーの心を掴む戦略と<br>
-          データに基づいた施策で<br>
-          ビジネスを成長させます。</h2>
+      <h2>経歴</h2>
+      <div class="career-items">
+        <div class="career-item" data-aos="fade-up">
+          <h3>SaaS開発企業に取締役として参画</h3>
+        </div>
+        <div class="career-item" data-aos="fade-up" data-aos-delay="100">
+          <h3>個人事業主として戦略コンサルを行う</h3>
+        </div>
+        <div class="career-item" data-aos="fade-up" data-aos-delay="200">
+          <h3>マーケティング会社にマーケティング責任者として参画</h3>
+        </div>
+        <div class="career-item" data-aos="fade-up" data-aos-delay="300">
+          <h3>中高生向けの個人塾経営を行う</h3>
         </div>
       </div>
     </div>
@@ -173,21 +180,21 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
-    
+
     // カウントアップアニメーション
     function countUp(className) {
       let elements = document.querySelectorAll(className);
-      
+
       elements.forEach(element => {
         let targetNumber = parseInt(element.textContent, 10);
         let currentNumber = 0;
         let duration = 3000; // アニメーション時間を3秒に延長
         let increment = targetNumber / (duration / 10);
-        
+
         let timer = setInterval(() => {
           currentNumber += increment;
           element.textContent = Math.ceil(currentNumber);
-          
+
           if (currentNumber >= targetNumber) {
             clearInterval(timer);
             element.textContent = targetNumber;
@@ -195,8 +202,19 @@
         }, 10);
       });
     }
-    
+
     countUp('.count');
+
+    $(window).scroll(function() {
+      $('.career-item').each(function() {
+        let elemPos = $(this).offset().top;
+        let scroll = $(window).scrollTop();
+        let windowHeight = $(window).height();
+        if (scroll > elemPos - windowHeight) {
+          $(this).addClass('scroll-in');
+        }
+      });
+    });
     
   </script>
 </body>
