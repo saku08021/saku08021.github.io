@@ -48,6 +48,18 @@ $(document).ready(function() {
         }
     });
   });
+
+  // 経歴セクションのカルーセル
+  $('.career-slider').slick({
+    autoplay: true, // 自動再生
+    autoplaySpeed: 3000, // 自動再生の速度
+    arrows: false, // 左右の矢印を非表示
+    dots: true, // ドットナビゲーションを表示
+    infinite: true, // 無限ループ
+    speed: 500, // スライドの速度
+    fade: true, // フェードエフェクト
+    cssEase: 'linear' // イージング
+  });
 });
 
 // 経歴表示のアニメーション (AOSライブラリを使用)
