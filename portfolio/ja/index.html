@@ -28,7 +28,7 @@
     <div class="container">
       <h2>経歴</h2>
       <div class="career-items">
-        <div class="career-item" data-aos="fade-up">
+        <div class="career-item" data-aos="fade-up" data-aos-delay="0">
           <h3>SaaS開発企業に取締役として参画</h3>
         </div>
         <div class="career-item" data-aos="fade-up" data-aos-delay="100">
@@ -144,14 +144,6 @@
     </div>
   </section>
 
-  <section class="blog" id="blog">
-    <div class="container">
-      <h2>ブログ</h2>
-      <p>マーケティング事例を解説するブログ記事を掲載予定です。</p> 
-      <!-- 後でブログ記事へのリンクを追加 -->
-    </div>
-  </section>
-
   <section class="contact" id="contact">
     <div class="container">
       <h2><i class="fas fa-envelope fa-lg"></i> お問い合わせ</h2>
@@ -216,15 +208,11 @@
 
     countUp('.count');
 
-    $(window).scroll(function() {
-      $('.career-item').each(function() {
-        let elemPos = $(this).offset().top;
-        let scroll = $(window).scrollTop();
-        let windowHeight = $(window).height();
-        if (scroll > elemPos - windowHeight) {
-          $(this).addClass('scroll-in');
-        }
-      });
+    // 経歴セクションのスクロールアニメーション(AOSライブラリを使用)
+    AOS.init({
+      duration: 500, // アニメーション時間
+      easing: 'ease-in-out',
+      once: true, // 一度だけアニメーションを実行
     });
     
   </script>
