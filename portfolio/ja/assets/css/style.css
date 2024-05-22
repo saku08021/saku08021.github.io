@@ -1,7 +1,7 @@
 /* 基本設定 */
 body {
   font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
-  background-color: #121212; 
+  background-color: #1e272e; /* ダークグレーに変更 */
   color: #eee; 
   margin: 0;
   padding: 0;
@@ -22,13 +22,13 @@ p {
 }
 
 a {
-  color: #00FFFF;
+  color: #00a8ff; /* 鮮やかな青に変更 */
   text-decoration: none;
   transition: color 0.3s ease; 
 }
 
 a:hover {
-  color: #6900D6; 
+  color: #66d9ff; /* より明るい青に変更 */
 }
 
 /* ローディング画面 */
@@ -38,21 +38,21 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #121212;
+  background-color: #1e272e; /* ダークグレーに変更 */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* 最前面に表示 */
+  z-index: 9999; 
 }
 
 .loading-icon {
   font-size: 3em;
-  color: #00c6ff;
+  color: #00a8ff; /* 鮮やかな青に変更 */
 }
 
 /* ヘッダー */
 header {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
+  background: linear-gradient(to right, #1e272e, #353b48); /* シックなダークトーンに変更 */
   padding: 30px 0;
   text-align: center;
   position: relative;
@@ -81,12 +81,11 @@ header p {
 
 /* 経歴セクション */
 .career {
-  padding: 100px 0 50px 0;
+  padding: 100px 0 50px 0; 
   text-align: center;
-  background-color: #0072ff;
+  background-color: #353b48; /* チャコールグレーに変更 */
   overflow: hidden;
   position: relative;
-  box-shadow: 0px 10px 15px -5px rgba(0, 198, 255, 0.5); 
 }
 
 .career::before {
@@ -117,7 +116,7 @@ header p {
 
 .career-item {
   padding: 30px;
-  background-color: #0072ff; 
+  background-color: #353b48; /* チャコールグレーに変更 */
   border-radius: 10px;
   text-align: center;
 }
@@ -130,10 +129,10 @@ header p {
 
 /* 実績セクション */
 .achievements {
-  padding: 50px 0 80px 0;
+  padding: 50px 0 80px 0; 
   text-align: center;
-  background-color: #111;
-  position: relative;
+  background-color: #1e272e; /* ダークグレーに変更 */
+  position: relative; 
 }
 
 .achievements::before {
@@ -142,21 +141,10 @@ header p {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  height: 4px; /* 境界線の高さを調整 */
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  animation: wave 4s linear infinite alternate; /* アニメーションを追加 */
+  width: 150%; /* 幅を調整 */
+  height: 40px; /* 高さを調整 */
+  background: radial-gradient(circle at center, #00a8ff, rgba(25, 39, 46, 0)); /* グラデーション境界線 */
 }
-
-@keyframes wave {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: 10px; /* 上下する幅 */
-  }
-}
-
 
 .achievements h2 {
   font-size: 2.5em;
@@ -170,7 +158,7 @@ header p {
 }
 
 .achievement-block {
-  background-color: #242424; 
+  background-color: #353b48; /* チャコールグレーに変更 */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -188,7 +176,7 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom right, #00c6ff, #0072ff); 
+  background: linear-gradient(to bottom right, #00a8ff, #353b48); /* 色を調整 */
   opacity: 0.2;
 }
 
@@ -228,7 +216,7 @@ header p {
 .skills {
   padding: 50px 0 80px 0; 
   text-align: center;
-  background: linear-gradient(to right, #00c6ff, #0072ff); 
+  background: linear-gradient(to right, #3494E6, #EC6EAD);
   position: relative; 
 }
 
@@ -238,19 +226,9 @@ header p {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  height: 4px; /* 境界線の高さを調整 */
-  background: linear-gradient(to right, #111, #242424);
-  animation: wave 4s linear infinite alternate; /* アニメーションを追加 */
-}
-
-@keyframes wave {
-  0% {
-    bottom: 0;
-  }
-  100% {
-    bottom: 10px; /* 上下する幅 */
-  }
+  width: 150%; /* 幅を調整 */
+  height: 40px; /* 高さを調整 */
+  background: radial-gradient(circle at center, #1e272e, rgba(53, 59, 72, 0)); /* グラデーション境界線 */
 }
 
 .skills h2 {
@@ -265,7 +243,7 @@ header p {
 }
 
 .skill-box {
-  background: linear-gradient(135deg, #00c6ff, #0072ff); 
+  background: linear-gradient(135deg, #3494E6, #EC6EAD); 
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -310,8 +288,8 @@ header p {
 .portfolio {
   padding: 50px 0 80px 0; 
   text-align: center;
-  background-color: #222;
-  position: relative;
+  background-color: #353b48; /* チャコールグレーに変更 */
+  position: relative; 
 }
 
 .portfolio::before {
@@ -320,19 +298,9 @@ header p {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  animation: wave 4s linear infinite alternate;
-}
-
-@keyframes wave {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: 10px;
-  }
+  width: 150%; /* 幅を調整 */
+  height: 40px; /* 高さを調整 */
+  background: radial-gradient(circle at center, #00a8ff, rgba(53, 59, 72, 0)); /* グラデーション境界線 */
 }
 
 .portfolio h2 {
@@ -371,7 +339,7 @@ header p {
 
 .portfolio-item i {
   font-size: 3em;
-  color: #00FFFF;
+  color: #00a8ff; /* 鮮やかな青に変更 */
   margin-bottom: 10px;
 }
 
@@ -384,7 +352,7 @@ header p {
 .contact {
   padding: 80px 0;
   text-align: center;
-  background-color: #111;
+  background-color: #1e272e; /* ダークグレーに変更 */
 }
 
 .contact h2 {
@@ -445,6 +413,6 @@ footer {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #181818; 
+  background-color: #181818;
   color: #eee; 
 }
