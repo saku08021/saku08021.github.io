@@ -81,7 +81,7 @@ header p {
 
 /* 経歴セクション */
 .career {
-  padding: 100px 0 150px 0; /* 下のpaddingを増やす */
+  padding: 100px 0 130px 0; /* 下のpaddingを調整 */
   text-align: center;
   background-color: #0072ff;
   overflow: hidden;
@@ -126,8 +126,8 @@ header p {
 }
 
 .career-items {
-  position: relative;
-  height: 100%;
+  position: relative; /* positionを追加 */
+  height: 100%; 
 }
 
 .career-item {
@@ -156,7 +156,7 @@ header p {
 
 /* 実績セクション */
 .achievements {
-  padding: 80px 0 150px 0; /* 下のpaddingを増やす */
+  padding: 80px 0 130px 0; /* 下のpaddingを調整 */
   text-align: center;
   background-color: #111;
   position: relative;
@@ -169,8 +169,8 @@ header p {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 150px; /* 波の高さを調整 */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='url(%23wave-gradient)'%3E%3C/path%3E%3Cdefs%3E%3ClinearGradient id='wave-gradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%2300c6ff' /%3E%3Cstop offset='100%25' stop-color='%230072ff' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  height: 80px; /* 波の高さを調整 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,15 Q150,30 300,15 T600,30 T900,15 T1200,30 L1200,0 Z' fill='%230072ff'%3E%3C/path%3E%3C/svg%3E"); /* 波形を調整 */
 }
 
 
@@ -242,7 +242,7 @@ header p {
 
 /* スキルセットセクション */
 .skills {
-  padding: 80px 0 150px 0; /* 下のpaddingを増やす */
+  padding: 80px 0 130px 0; /* 下のpaddingを調整 */
   text-align: center;
   background: linear-gradient(to right, #00c6ff, #0072ff);
   position: relative; 
@@ -255,8 +255,8 @@ header p {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 150px; /* 波の高さを調整 */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,90 Q150,40 300,90 T600,40 T900,90 T1200,40 L1200,120 Z' fill='%23111'%3E%3C/path%3E%3C/svg%3E");
+  height: 80px; /* 波の高さを調整 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,105 Q150,90 300,105 T600,90 T900,105 T1200,90 L1200,120 Z' fill='%23111'%3E%3C/path%3E%3C/svg%3E"); /* 波形を調整 */
 }
 
 .skills h2 {
@@ -314,7 +314,7 @@ header p {
 
 /* ポートフォリオセクション */
 .portfolio {
-  padding: 50px 0 150px 0; /* 下のpaddingを増やす */
+  padding: 80px 0 130px 0; /* 下のpaddingを調整 */
   text-align: center;
   background-color: #222;
   position: relative; 
@@ -327,8 +327,8 @@ header p {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 150px; /* 波の高さを調整 */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='url(%23wave-gradient)'%3E%3C/path%3E%3Cdefs%3E%3ClinearGradient id='wave-gradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%2300c6ff' /%3E%3Cstop offset='100%25' stop-color='%230072ff' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  height: 80px; /* 波の高さを調整 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,15 Q150,30 300,15 T600,30 T900,15 T1200,30 L1200,0 Z' fill='url(%23wave-gradient)'%3E%3C/path%3E%3Cdefs%3E%3ClinearGradient id='wave-gradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%2300c6ff' /%3E%3Cstop offset='100%25' stop-color='%230072ff' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"); /* 波形を調整 */
 }
 
 .portfolio h2 {
@@ -378,21 +378,9 @@ header p {
 
 /* お問い合わせセクション */
 .contact {
-  padding: 50px 0 80px 0;
+  padding: 80px 0;
   text-align: center;
   background-color: #111;
-  position: relative; 
-  overflow: hidden;
-}
-
-.contact::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='url(%23wave-gradient)'%3E%3C/path%3E%3Cdefs%3E%3ClinearGradient id='wave-gradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%2300c6ff' /%3E%3Cstop offset='100%25' stop-color='%230072ff' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
 }
 
 .contact h2 {
