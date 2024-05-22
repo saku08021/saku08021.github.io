@@ -41,11 +41,23 @@ $(document).ready(function() {
     $(this).prop('Counter',0).animate({
         Counter: $(this).text()
     }, {
-        duration: 1500, // アニメーション時間
+        duration: 3000, // アニメーション時間
         easing: 'swing',
         step: function (now) {
             $(this).text(Math.ceil(now));
         }
     });
+  });
+});
+
+// 経歴セクションのスクロールアニメーション
+$(window).scroll(function() {
+  $('.career-item').each(function() {
+    let elemPos = $(this).offset().top;
+    let scroll = $(window).scrollTop();
+    let windowHeight = $(window).height();
+    if (scroll > elemPos - windowHeight) {
+      $(this).addClass('scroll-in');
+    }
   });
 });
