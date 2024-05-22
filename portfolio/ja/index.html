@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+  <div class="loading">
+    <div class="loading-icon">
+      <i class="fas fa-spinner fa-spin fa-3x"></i>
+    </div>
+  </div>
+
   <header>
     <div class="container">
       <div class="header-content">
@@ -179,6 +186,10 @@
   <script src="assets/js/main.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    $(window).on('load', function(){
+      $(".loading").fadeOut(300);
+    });
+
     AOS.init();
 
     // カウントアップアニメーション
