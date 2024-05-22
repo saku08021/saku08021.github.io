@@ -1,8 +1,8 @@
 /* 基本設定 */
 body {
   font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
-  background-color: #121212;
-  color: #eee;
+  background-color: #121212; 
+  color: #eee; 
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -18,17 +18,36 @@ h1, h2 {
 }
 
 p {
-  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
+  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif; 
 }
 
 a {
   color: #00FFFF;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; 
 }
 
 a:hover {
-  color: #6900D6;
+  color: #6900D6; 
+}
+
+/* ローディング画面 */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 最前面に表示 */
+}
+
+.loading-icon {
+  font-size: 3em;
+  color: #00c6ff;
 }
 
 /* ヘッダー */
@@ -37,7 +56,7 @@ header {
   padding: 30px 0;
   text-align: center;
   position: relative;
-  z-index: 2;
+  z-index: 2; 
 }
 
 header .header-content {
@@ -62,10 +81,9 @@ header p {
 
 /* 経歴セクション */
 .career {
-  padding: 100px 0;
+  padding: 100px 0 150px 0; /* 下のpaddingを増やす */
   text-align: center;
-  background-color: #0072ff; 
-  height: 500px;
+  background-color: #0072ff;
   overflow: hidden;
   position: relative;
 }
@@ -86,12 +104,12 @@ header p {
   content: '';
   position: absolute;
   bottom: 10%;
-  right: -20%;
+  right: -20%; 
   width: 80%;
   height: 100%;
   background: linear-gradient(to top left, #242424, #000);
-  transform: skewY(-10deg);
-  z-index: 1;
+  transform: skewY(-10deg); 
+  z-index: 1; 
 }
 
 .career .container {
@@ -114,19 +132,19 @@ header p {
 
 .career-item {
   position: absolute;
-  bottom: -100px; /* 初期位置を画面外に設定 */
+  bottom: -100px; 
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
-  opacity: 0; /* 初期状態は非表示 */
-  transition: all 1s ease; /* スクロールアニメーション */
+  opacity: 0;
+  transition: all 1s ease;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
 
 .career-item.scroll-in {
-  bottom: 20px; /* スクロールで表示位置に移動 */
+  bottom: 20px;
   opacity: 1;
 }
 
@@ -138,20 +156,20 @@ header p {
 
 /* 実績セクション */
 .achievements {
-  padding: 80px 0;
+  padding: 80px 0 150px 0; /* 下のpaddingを増やす */
   text-align: center;
   background-color: #111;
   position: relative;
   overflow: hidden;
 }
 
-.achievements::before { /* 波型の境界線を追加 */
+.achievements::before { 
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 150px; /* 波の高さを調整 */
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='%230072ff'%3E%3C/path%3E%3C/svg%3E");
 }
 
@@ -168,8 +186,8 @@ header p {
 }
 
 .achievement-block {
-  background-color: #242424;
-  padding: 30px; 
+  background-color: #242424; 
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -195,14 +213,19 @@ header p {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+.achievement-block:hover p { /* ホバー時の数字拡大 */
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
 .achievement-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
-  position: relative; 
-  z-index: 1; 
+  position: relative;
+  z-index: 1;
 }
 
 .achievement-item i {
@@ -214,13 +237,14 @@ header p {
 .achievement-item p {
   font-size: 1.1em;
   margin-bottom: 0;
+  transition: transform 0.3s ease; /* 数字拡大のトランジション */
 }
 
 /* スキルセットセクション */
 .skills {
-  padding: 80px 0 50px 0; 
+  padding: 80px 0 150px 0; /* 下のpaddingを増やす */
   text-align: center;
-  background: linear-gradient(to right, #00c6ff, #0072ff); 
+  background: linear-gradient(to right, #00c6ff, #0072ff);
   position: relative; 
   overflow: hidden; 
 }
@@ -231,7 +255,7 @@ header p {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 150px; /* 波の高さを調整 */
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='%23111'%3E%3C/path%3E%3C/svg%3E");
 }
 
@@ -250,15 +274,15 @@ header p {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
   transition: all 0.3s ease;
   text-align: center;
   aspect-ratio: 1 / 1;
 }
 
 .skill-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  transform: translateY(-8px); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); 
 }
 
 .skill-item {
@@ -270,15 +294,15 @@ header p {
 }
 
 .skill-item i {
-  font-size: 4em;
-  color: #fff;
+  font-size: 4em; 
+  color: #fff; 
   margin-bottom: 10px;
 }
 
 .skill-item h3 {
   font-size: 1.8em; 
   margin-bottom: 10px;
-  color: #fff;
+  color: #fff; 
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
@@ -290,20 +314,20 @@ header p {
 
 /* ポートフォリオセクション */
 .portfolio {
-  padding: 50px 0 80px 0;
+  padding: 50px 0 150px 0; /* 下のpaddingを増やす */
   text-align: center;
   background-color: #222;
-  position: relative;
-  overflow: hidden;
+  position: relative; 
+  overflow: hidden; 
 }
 
 .portfolio::before {
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 150px; /* 波の高さを調整 */
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='%230072ff'%3E%3C/path%3E%3C/svg%3E");
 }
 
@@ -354,20 +378,20 @@ header p {
 
 /* ブログセクション */
 .blog {
-  padding: 80px 0 50px 0; /* 下のpaddingを小さく */
+  padding: 80px 0 150px 0; /* 下のpaddingを増やす */
   text-align: center;
   background-color: #111;
-  position: relative;
-  overflow: hidden;
+  position: relative; 
+  overflow: hidden; 
 }
 
-.blog::before { /* 波型の境界線を追加 */
+.blog::before {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 150px; /* 波の高さを調整 */
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='%230072ff'%3E%3C/path%3E%3C/svg%3E");
 }
 
@@ -398,14 +422,14 @@ header p {
 
 /* お問い合わせセクション */
 .contact {
-  padding: 50px 0 80px 0; /* 上のpaddingを小さく */
+  padding: 50px 0 80px 0;
   text-align: center;
   background-color: #111;
-  position: relative;
+  position: relative; 
   overflow: hidden;
 }
 
-.contact::before { /* 波型の境界線を追加 */
+.contact::before {
   content: "";
   position: absolute;
   top: 0;
@@ -473,6 +497,6 @@ footer {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #181818; 
+  background-color: #181818;
   color: #eee; 
 }
