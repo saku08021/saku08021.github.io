@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -27,17 +28,17 @@
   <section class="career" id="career">
     <div class="container">
       <h2>経歴</h2>
-      <div class="career-items">
-        <div class="career-item" data-aos="fade-up" data-aos-delay="0">
+      <div class="career-slider">
+        <div class="career-item">
           <h3>SaaS開発企業に取締役として参画</h3>
         </div>
-        <div class="career-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="career-item">
           <h3>個人事業主として戦略コンサルを行う</h3>
         </div>
-        <div class="career-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="career-item">
           <h3>マーケティング会社にマーケティング責任者として参画</h3>
         </div>
-        <div class="career-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="career-item">
           <h3>中高生向けの個人塾経営を行う</h3>
         </div>
       </div>
@@ -175,6 +176,7 @@
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
@@ -208,11 +210,15 @@
 
     countUp('.count');
 
-    // 経歴表示のアニメーション (AOSライブラリを使用)
-    AOS.init({
-      duration: 500, 
-      easing: 'ease-in-out',
-      once: true, 
+    $('.career-slider').slick({
+      autoplay: true, // 自動再生
+      autoplaySpeed: 3000, // 自動再生の速度
+      arrows: false, // 左右の矢印を非表示
+      dots: true, // ドットナビゲーションを表示
+      infinite: true, // 無限ループ
+      speed: 500, // スライドの速度
+      fade: true, // フェードエフェクト
+      cssEase: 'linear' // イージング
     });
   </script>
 </body>
