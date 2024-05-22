@@ -191,8 +191,8 @@
       elements.forEach(element => {
         let targetNumber = parseInt(element.textContent, 10);
         let currentNumber = 0;
-        let duration = 3000; // アニメーション時間を3秒に延長
-        let increment = targetNumber / (duration / 10);
+        let duration = 3000; 
+        let increment = targetNumber / (duration / 10); 
 
         let timer = setInterval(() => {
           currentNumber += increment;
@@ -210,11 +210,10 @@
 
     // 経歴表示のアニメーション (AOSライブラリを使用)
     AOS.init({
-      duration: 500, // アニメーション時間
+      duration: 500, 
       easing: 'ease-in-out',
-      once: true, // 一度だけアニメーションを実行
+      once: true, 
     });
-
   </script>
 </body>
 </html>
