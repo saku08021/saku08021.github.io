@@ -1,8 +1,8 @@
 /* 基本設定 */
 body {
   font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
-  background-color: #121212; 
-  color: #eee; 
+  background-color: #121212;
+  color: #eee;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -36,7 +36,7 @@ header {
   background: linear-gradient(to right, #00c6ff, #0072ff);
   padding: 30px 0;
   text-align: center;
-  position: relative; 
+  position: relative;
   z-index: 2;
 }
 
@@ -60,76 +60,80 @@ header p {
   margin-bottom: 0;
 }
 
-/* ヒーローセクション */
-.hero {
-  padding: 100px 0; 
+/* 経歴セクション */
+.career {
+  padding: 100px 0;
   text-align: center;
   background-color: #0072ff; 
-  height: 500px; 
+  height: 500px;
   overflow: hidden;
   position: relative;
 }
 
-.hero::before {
+.career::before {
   content: '';
   position: absolute;
   top: 10%;
-  left: -20%; 
-  width: 80%; 
+  left: -20%;
+  width: 80%;
   height: 100%;
-  background: linear-gradient(to bottom right, #242424, #000); 
-  transform: skewY(-10deg); 
-  z-index: 1; 
+  background: linear-gradient(to bottom right, #242424, #000);
+  transform: skewY(-10deg);
+  z-index: 1;
 }
 
-.hero::after {
+.career::after {
   content: '';
   position: absolute;
   bottom: 10%;
-  right: -20%; 
+  right: -20%;
   width: 80%;
   height: 100%;
-  background: linear-gradient(to top left, #242424, #000); 
+  background: linear-gradient(to top left, #242424, #000);
   transform: skewY(-10deg);
-  z-index: 1; 
+  z-index: 1;
 }
 
-.hero-content {
-  max-width: 900px; 
+.career .container {
+  max-width: 900px;
   margin: 0 auto;
-  position: relative; 
+  position: relative;
   z-index: 2;
 }
 
-.hero-message h1 {
-  font-size: 4em;
-  margin-bottom: 10px;
+.career h2 {
+  font-size: 2.5em;
   color: #fff;
-  line-height: 1.2;
+  margin-bottom: 50px;
 }
 
-.hero-message h2 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  color: #fff;
-  line-height: 1.4;
+.career-items {
+  position: relative;
+  height: 100%;
 }
 
-.btn {
-  background-color: #8A2BE2;
-  color: #fff;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: 600;
+.career-item {
+  position: absolute;
+  bottom: -100px; /* 初期位置を画面外に設定 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  opacity: 0; /* 初期状態は非表示 */
+  transition: all 1s ease; /* スクロールアニメーション */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
-.btn:hover {
-  background-color: #6900D6; 
-  transform: translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+.career-item.scroll-in {
+  bottom: 20px; /* スクロールで表示位置に移動 */
+  opacity: 1;
+}
+
+.career-item h3 {
+  font-size: 1.5em;
+  color: #fff;
+  margin-bottom: 0;
 }
 
 /* 実績セクション */
@@ -137,7 +141,20 @@ header p {
   padding: 80px 0;
   text-align: center;
   background-color: #111;
+  position: relative;
+  overflow: hidden;
 }
+
+.achievements::before { /* 波型の境界線を追加 */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='%230072ff'%3E%3C/path%3E%3C/svg%3E");
+}
+
 
 .achievements h2 {
   font-size: 2.5em;
@@ -151,14 +168,14 @@ header p {
 }
 
 .achievement-block {
-  background-color: #242424; 
-  padding: 30px;
+  background-color: #242424;
+  padding: 30px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   text-align: center;
   aspect-ratio: 1 / 1;
-  position: relative; 
+  position: relative;
   overflow: hidden;
 }
 
@@ -169,7 +186,7 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom right, #00c6ff, #0072ff);
+  background: linear-gradient(to bottom right, #00c6ff, #0072ff); 
   opacity: 0.2;
 }
 
@@ -184,13 +201,13 @@ header p {
   align-items: center;
   justify-content: center;
   height: 100%;
-  position: relative;
+  position: relative; 
   z-index: 1; 
 }
 
 .achievement-item i {
   font-size: 3em;
-  color: #fff; 
+  color: #fff;
   margin-bottom: 10px;
 }
 
@@ -201,10 +218,10 @@ header p {
 
 /* スキルセットセクション */
 .skills {
-  padding: 80px 0 50px 0; /* 下のpaddingを小さく */
+  padding: 80px 0 50px 0; 
   text-align: center;
   background: linear-gradient(to right, #00c6ff, #0072ff); 
-  position: relative; /* 波型の境界線を作成 */
+  position: relative; 
   overflow: hidden; 
 }
 
@@ -214,7 +231,7 @@ header p {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* 波の高さ */
+  height: 80px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='%23111'%3E%3C/path%3E%3C/svg%3E");
 }
 
@@ -225,23 +242,23 @@ header p {
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
 .skill-box {
-  background: linear-gradient(135deg, #00c6ff, #0072ff); /* グラデーション背景 */
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
   text-align: center;
   aspect-ratio: 1 / 1;
 }
 
 .skill-box:hover {
-  transform: translateY(-8px); 
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); 
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
 }
 
 .skill-item {
@@ -253,30 +270,30 @@ header p {
 }
 
 .skill-item i {
-  font-size: 4em; 
+  font-size: 4em;
   color: #fff;
   margin-bottom: 10px;
 }
 
 .skill-item h3 {
   font-size: 1.8em; 
-  margin-bottom: 10px; 
-  color: #fff; 
+  margin-bottom: 10px;
+  color: #fff;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .skill-box p {
-  font-size: 1em;
+  font-size: 1em; 
   margin-bottom: 0;
-  color: #fff;
+  color: #fff; 
 }
 
 /* ポートフォリオセクション */
 .portfolio {
-  padding: 50px 0 80px 0; /* 上のpaddingを小さく */
+  padding: 50px 0 80px 0;
   text-align: center;
   background-color: #222;
-  position: relative; /* 波型の境界線を作成 */
+  position: relative;
   overflow: hidden;
 }
 
@@ -286,7 +303,7 @@ header p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* 波の高さ */
+  height: 80px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='%230072ff'%3E%3C/path%3E%3C/svg%3E");
 }
 
@@ -335,11 +352,67 @@ header p {
   margin-bottom: 0;
 }
 
-/* お問い合わせセクション */
-.contact {
-  padding: 80px 0;
+/* ブログセクション */
+.blog {
+  padding: 80px 0 50px 0; /* 下のpaddingを小さく */
   text-align: center;
   background-color: #111;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog::before { /* 波型の境界線を追加 */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='%230072ff'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.blog h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.blog p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.blog a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00c6ff;
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.blog a:hover {
+  background-color: #0072ff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* お問い合わせセクション */
+.contact {
+  padding: 50px 0 80px 0; /* 上のpaddingを小さく */
+  text-align: center;
+  background-color: #111;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before { /* 波型の境界線を追加 */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='%230072ff'%3E%3C/path%3E%3C/svg%3E");
 }
 
 .contact h2 {
@@ -371,7 +444,7 @@ footer {
 }
 
 .social-links a {
-  margin: 0 5px; 
+  margin: 0 5px;
 }
 
 /* コンテンツエリア */
@@ -401,5 +474,5 @@ footer {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #181818; 
-  color: #eee;
+  color: #eee; 
 }
