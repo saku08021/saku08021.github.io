@@ -137,7 +137,7 @@ header p {
   transform: translateX(-50%);
   width: 80%;
   opacity: 0;
-  transition: all 1s ease;
+  transition: all 0.5s ease 0.3s; /* アニメーション速度と遅延を調整 */
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -374,50 +374,6 @@ header p {
 .portfolio-item h3 {
   font-size: 1.5em;
   margin-bottom: 0;
-}
-
-/* ブログセクション */
-.blog {
-  padding: 80px 0 150px 0; /* 下のpaddingを増やす */
-  text-align: center;
-  background-color: #111;
-  position: relative; 
-  overflow: hidden; 
-}
-
-.blog::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 150px; /* 波の高さを調整 */
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,30 Q150,80 300,30 T600,80 T900,30 T1200,80 L1200,0 Z' fill='%230072ff'%3E%3C/path%3E%3C/svg%3E");
-}
-
-.blog h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.blog p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-}
-
-.blog a {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #00c6ff;
-  color: #fff;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.blog a:hover {
-  background-color: #0072ff;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* お問い合わせセクション */
