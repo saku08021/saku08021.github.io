@@ -81,7 +81,7 @@ header p {
 
 /* 経歴セクション */
 .career {
-  padding: 100px 0 130px 0; /* 下のpaddingを調整 */
+  padding: 100px 0 50px 0; /* padding調整 */
   text-align: center;
   background-color: #0072ff;
   overflow: hidden;
@@ -125,27 +125,16 @@ header p {
   margin-bottom: 50px;
 }
 
-.career-items {
-  position: relative; /* positionを追加 */
-  height: 100%; 
+.career-slider { /* カルーセル用のスタイル */
+  width: 80%;
+  margin: 0 auto;
 }
 
 .career-item {
-  position: absolute;
-  top: 100%; /* 画面上端から表示 */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  opacity: 0;
-  transition: all 0.5s ease 0.3s; /* アニメーション速度と遅延を調整 */
-  padding: 20px;
+  padding: 30px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-}
-
-.career-item.scroll-in {
-  top: 20px; /* 表示位置に移動 */
-  opacity: 1;
+  text-align: center;
 }
 
 .career-item h3 {
@@ -156,21 +145,21 @@ header p {
 
 /* 実績セクション */
 .achievements {
-  padding: 80px 0 130px 0; /* 下のpaddingを調整 */
+  padding: 50px 0 80px 0; /* padding調整 */
   text-align: center;
   background-color: #111;
-  position: relative;
+  position: relative; 
   overflow: hidden;
 }
 
 .achievements::before { 
   content: "";
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* 波の高さを調整 */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,15 Q150,30 300,15 T600,30 T900,15 T1200,30 L1200,0 Z' fill='%230072ff'%3E%3C/path%3E%3C/svg%3E"); /* 波形を調整 */
+  height: 30px; /* 境界線の高さを調整 */
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* グラデーション境界線 */
 }
 
 
@@ -242,7 +231,7 @@ header p {
 
 /* スキルセットセクション */
 .skills {
-  padding: 80px 0 130px 0; /* 下のpaddingを調整 */
+  padding: 50px 0 80px 0; /* padding調整 */
   text-align: center;
   background: linear-gradient(to right, #00c6ff, #0072ff);
   position: relative; 
@@ -255,8 +244,8 @@ header p {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* 波の高さを調整 */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,105 Q150,90 300,105 T600,90 T900,105 T1200,90 L1200,120 Z' fill='%23111'%3E%3C/path%3E%3C/svg%3E"); /* 波形を調整 */
+  height: 30px; /* 境界線の高さを調整 */
+  background: linear-gradient(to right, #111, #242424); /* グラデーション境界線 */
 }
 
 .skills h2 {
@@ -314,7 +303,7 @@ header p {
 
 /* ポートフォリオセクション */
 .portfolio {
-  padding: 80px 0 130px 0; /* 下のpaddingを調整 */
+  padding: 50px 0 80px 0; /* padding調整 */
   text-align: center;
   background-color: #222;
   position: relative; 
@@ -324,11 +313,11 @@ header p {
 .portfolio::before {
   content: "";
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* 波の高さを調整 */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,15 Q150,30 300,15 T600,30 T900,15 T1200,30 L1200,0 Z' fill='url(%23wave-gradient)'%3E%3C/path%3E%3Cdefs%3E%3ClinearGradient id='wave-gradient' x1='0%25' y1='0%25' x2='100%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%2300c6ff' /%3E%3Cstop offset='100%25' stop-color='%230072ff' /%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E"); /* 波形を調整 */
+  height: 30px; /* 境界線の高さを調整 */
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* グラデーション境界線 */
 }
 
 .portfolio h2 {
@@ -443,4 +432,18 @@ footer {
   border-radius: 5px;
   background-color: #181818;
   color: #eee; 
+}
+
+/* Slick カルーセル調整 */
+.slick-dots {
+  bottom: -40px; /* ドットの位置を調整 */
+}
+
+.slick-dots li button:before {
+  font-size: 12px; /* ドットのサイズを調整 */
+  color: #0072ff; /* ドットの色を調整 */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #00c6ff; /* アクティブなドットの色を調整 */
 }
