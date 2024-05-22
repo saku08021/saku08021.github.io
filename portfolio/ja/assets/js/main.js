@@ -51,14 +51,14 @@ $(document).ready(function() {
 
   // 経歴セクションのカルーセル
   $('.career-slider').slick({
-    autoplay: true, // 自動再生
-    autoplaySpeed: 3000, // 自動再生の速度
-    arrows: false, // 左右の矢印を非表示
-    dots: true, // ドットナビゲーションを表示
-    infinite: true, // 無限ループ
-    speed: 500, // スライドの速度
-    fade: true, // フェードエフェクト
-    cssEase: 'linear' // イージング
+    autoplay: true,       // 自動再生
+    autoplaySpeed: 1000,  // 自動再生の速度
+    arrows: false,        // 左右の矢印を非表示
+    dots: true,          // ドットナビゲーションを表示
+    infinite: true,      // 無限ループ
+    speed: 300,          // スライドの速度を300msに変更 
+    fade: true,          // フェードエフェクト
+    cssEase: 'linear'    // イージング
   });
 });
 
