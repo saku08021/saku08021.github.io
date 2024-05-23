@@ -148,7 +148,7 @@
           { title: '会社売上', detail: '半年で社内利益180%達成' }
         ],
         consulting: [
-          { title: '業務効率化コンサルティング', detail: 'コンテンツ作成における業務の効率化、SNS運用,コンテンツ販売の半自動化を行いマーケティングコスト35%減' },
+          { title: '業務効率化コンサルティング', detail: 'コンテンツ作成における業務の効率化、SNS運用,コンテンツ販売の半自動化を行いマーケティングコスト35%減。' },
           { title: 'マーケティングコンサルティング', detail: 'リード獲得数増加に伴い売上200%達成' }
         ]
       };
@@ -171,13 +171,13 @@
           // ホバーでポップアップ表示
           let timeoutId;
           achievementItem.hover(function() {
-            clearTimeout(timeoutId); // 前のタイマーをクリア
-            timeoutId = setTimeout(() => { // 少し遅らせてポップアップを表示
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
               $(this).find('.achievement-popup').addClass('show');
             }, 200); 
           }, function() {
-            clearTimeout(timeoutId); // マウスアウト時にタイマーをクリア
-            $(this).find('.achievement-popup').removeClass('show'); // ポップアップを非表示
+            clearTimeout(timeoutId); 
+            $(this).find('.achievement-popup').removeClass('show'); 
           });
         });
       }
