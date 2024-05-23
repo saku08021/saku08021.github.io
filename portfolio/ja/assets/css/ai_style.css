@@ -1,0 +1,278 @@
+/* 基本設定 */
+body {
+  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+  background-color: #121212; 
+  color: #eee; 
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h1, h2 {
+  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+}
+
+p {
+  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif; 
+}
+
+a {
+  color: #00FFFF;
+  text-decoration: none;
+  transition: color 0.3s ease; 
+}
+
+a:hover {
+  color: #6900D6; 
+}
+
+/* ローディング画面 */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-icon {
+  font-size: 3em;
+  color: #00c6ff;
+}
+
+/* ヘッダー */
+header {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  padding: 30px 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .header-content i {
+  margin-right: 10px;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+/* ヒーローセクション（AIイラスト） */
+.hero-ai {
+  padding: 100px 0;
+  text-align: center;
+  background-color: #f5f5f5; /* 明るい背景 */
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-ai .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-message {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 20px;
+  text-align: left; /* テキストを左寄せ */
+}
+
+.hero-message h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #333; /* 濃いグレー */
+}
+
+.hero-message p {
+  font-size: 1.2em;
+  color: #555; /* グレー */
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* カテゴリーセクション */
+.categories {
+  padding: 80px 0;
+  background-color: #111;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.category-item {
+  display: block;
+  text-decoration: none;
+  color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.category-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.category-image {
+  width: 100%;
+  height: 200px; /* 高さを固定 */
+  overflow: hidden;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画像をトリミング */
+  transition: transform 0.5s ease;
+}
+
+.category-item:hover .category-image img {
+  transform: scale(1.1);
+}
+
+.category-item h3 {
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+/* ギャラリーセクション */
+.gallery {
+  padding: 80px 0;
+  background-color: #1e272e; /* ダークグレー */
+  text-align: center;
+}
+
+.gallery h3 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #eee;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* フッター */
+footer {
+  background-color: #000;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  margin: 0 5px;
+}
+
+/* コンテンツエリア */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+  .achievement-grid, 
+  .skill-grid, 
+  .portfolio-grid,
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-ai .container {
+    flex-direction: column; /* スマホでは縦並び */
+  }
+
+  .hero-image {
+    order: -1; /* 画像を上に */
+    margin: 20px 0;
+  }
+
+  .sp-only { /* スマホのみ改行 */
+    display: block;
+  }
+}
+
+/* フォーム */
+.form-item {
+  margin-bottom: 15px;
+}
+
+.form-item input[type="text"],
+.form-item input[type="email"],
+.form-item textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #181818;
+  color: #eee; 
+}
