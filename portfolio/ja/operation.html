@@ -23,16 +23,19 @@
         <div class="achievement-category" data-category="sns">
           <h3>SNS</h3>
           <div class="achievement-items" id="sns-achievements">
+            <!--ここに実績内容が入る-->
           </div>
         </div>
         <div class="achievement-category" data-category="contents">
           <h3>コンテンツ販売</h3>
           <div class="achievement-items" id="contents-achievements">
+            <!--ここに実績内容が入る-->
           </div>
         </div>
         <div class="achievement-category" data-category="consulting">
           <h3>コンサルティング</h3>
           <div class="achievement-items" id="consulting-achievements">
+            <!--ここに実績内容が入る-->
           </div>
         </div>
       </div>
@@ -135,19 +138,18 @@
       // 実績データ
       const achievementsData = {
         sns: [
-          { title: 'Twitterアカウント運用', detail: '0→13万人達成 (その他万垢多数達成)' },
-          { title: 'Instagramフォロワー', detail: '週間インプレッション3,000,000達成 / 1日最大獲得リスト数1,000人達成 / フォロワー数20,000人達成 / フォロワー数6,000人達成' },
-          { title: 'YouTubeアカウント運用', detail: '0→5万人達成' },
-          { title: '自社SNS(X)アカウント運用', detail: '50垢同時運用' }
+          { title: 'Twitterフォロワー最大数', detail: '0→13万人達成 (その他万垢多数達成)' },
+          { title: 'YouTube登録者最大数', detail: '0→5万人達成' },
+          { title: 'Instagramフォロワー最大数', detail: '20,000人達成' },
+          { title: '1日のリスト獲得最大数', detail: '1,000人達成' }
         ],
         contents: [
           { title: '担当コンテンツ売上', detail: '3ヶ月で200%増加' },
-          { title: '担当コンテンツ純利益', detail: '3ヶ月で200%達成 / 事業責任者として半年で社内利益180%達成' },
-          { title: 'コンテンツ販売', detail: '業務効率化・半自動化によりマーケティングコスト35%減 / 売上200%達成' }
+          { title: '会社売上', detail: '半年で社内利益180%達成' }
         ],
         consulting: [
-          { title: 'コンサルティング業務', detail: '法人2社、個人事業主3名に業務フロー、マーケティングなどのコンサルティングを実施' },
-          { title: 'マーケティングコンサルティング', detail: '業務フロー改善、各種アナリティクスの活用方法の教育 / コンテンツ作成の効率化、SNS運用・コンテンツ販売の半自動化を行い、マーケティングコスト35%削減 / リード獲得数増加に伴い売上200%達成' }
+          { title: '業務効率化コンサルティング', detail: 'コンテンツ作成における業務の効率化、SNS運用,コンテンツ販売の半自動化を行いマーケティングコスト35%減。' },
+          { title: 'マーケティングコンサルティング', detail: 'リード獲得数増加に伴い売上200%達成' }
         ]
       };
 
@@ -166,9 +168,9 @@
           `);
           container.append(achievementItem);
 
-          // ポップアップ表示
-          achievementItem.on('click', function() {
-            $(this).find('.achievement-popup').toggleClass('show'); 
+          // ホバーでポップアップ表示/非表示を切り替え
+          achievementItem.hover(function() {
+            $(this).find('.achievement-popup').toggleClass('show');
           });
         });
       }
