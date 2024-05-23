@@ -9,11 +9,11 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-weight: 700;
 }
 
-h1, h2 {
+h1, h2, h4 {
   font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
 }
 
@@ -94,39 +94,73 @@ header p {
 
 .achievement-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
 
-.achievement-item {
+.achievement-category {
   background-color: #353b48; /* チャコールグレー */
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
   color: #eee;
 }
 
-.achievement-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.achievement-category h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-.achievement-content {
+.achievement-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.achievement-item {
+  background-color: #283139; /* さらに暗いダークグレー */
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  position: relative; /* ポップアップの配置のために必要 */
+  overflow: hidden;
+}
+
+.achievement-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.achievement-title {
+  color: #00a8ff; /* 鮮やかな青 */
+}
+
+/* ポップアップ */
+.achievement-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
   text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  display: none; /* 初期状態は非表示 */
 }
 
-.achievement-content h3 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+.achievement-popup h4 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
-.achievement-content h3 .count {
-  font-size: 3em;
-  color: #00a8ff;
-}
-
-.achievement-content p {
+.achievement-popup p {
   font-size: 1em;
 }
 
@@ -229,6 +263,19 @@ footer {
 @media screen and (max-width: 768px) {
   .achievement-grid, .skill-grid, .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+
+  .achievement-items {
+    display: block; /* スマホでは縦並び */
+  }
+
+  .achievement-popup {
+    position: static; /* スマホではポップアップではなく、通常のブロック */
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    display: block;
+    padding: 0;
   }
 }
 
