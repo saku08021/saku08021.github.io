@@ -1,32 +1,35 @@
 $(document).ready(function() {
-  // シーン、カメラ、レンダラーを初期化
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.getElementById('scene-container').appendChild(renderer.domElement);
-
-  // 環境光を追加
-  const ambientLight = new THREE.AmbientLight(0x404040);
-  scene.add(ambientLight);
-
-  // スポットライトを追加
-  const spotLight = new THREE.SpotLight(0xffffff, 1);
-  spotLight.position.set(10, 20, 10);
-  scene.add(spotLight);
-
-  // 経歴データ
-  const careerData = [
-    { year: '2023', text: 'SaaS開発企業に取締役として参画' },
-    { year: '2022', text: '個人事業主として戦略コンサルを行う' },
-    { year: '2021', text: '株式会社Mにマーケティング責任者として参画' },
-    { year: '2020', text: '中高生向けの個人塾経営を行う' }
-  ];
+  // ローディング画面を表示
+  $('.loading').show(); 
 
   // フォントローダー
   const loader = new THREE.FontLoader();
   loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
     // フォントの読み込みが完了してからオブジェクトを作成
+
+    // シーン、カメラ、レンダラーを初期化
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('scene-container').appendChild(renderer.domElement);
+
+    // 環境光を追加
+    const ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
+
+    // スポットライトを追加
+    const spotLight = new THREE.SpotLight(0xffffff, 1);
+    spotLight.position.set(10, 20, 10);
+    scene.add(spotLight);
+
+    // 経歴データ
+    const careerData = [
+      { year: '2023', text: 'SaaS開発企業に取締役として参画' },
+      { year: '2022', text: '個人事業主として戦略コンサルを行う' },
+      { year: '2021', text: '株式会社Mにマーケティング責任者として参画' },
+      { year: '2020', text: '中高生向けの個人塾経営を行う' }
+    ];
 
     // 経歴キューブを作成
     const careerCubeGroup = new THREE.Group();
@@ -128,19 +131,19 @@ $(document).ready(function() {
       const iconMaterial = new THREE.MeshBasicMaterial({ 
         color: 0xffffff, 
         transparent: true, 
-        opacity: data.level / 10 
+        opacity: data.level / 10
       });
       const icon = new THREE.Mesh(iconGeometry, iconMaterial);
 
       // Font Awesomeのアイコンを設定
-      icon.name = data.name; 
-      icon.userData.html = `<i class="${data.icon} fa-3x"></i>`; 
+      icon.name = data.name;
+      icon.userData.html = `<i class="${data.icon} fa-3x"></i>`;
 
-      icon.position.x = index * (iconSize + skillSpacing) - (skillData.length * (iconSize + skillSpacing) / 2); 
+      icon.position.x = index * (iconSize + skillSpacing) - (skillData.length * (iconSize + skillSpacing) / 2);
       skillGroup.add(icon);
     });
 
-    skillGroup.position.set(0, 10, 0);
+    skillGroup.position.set(0, 10, 0); 
     scene.add(skillGroup);
 
     // カメラの初期位置
@@ -212,5 +215,8 @@ $(document).ready(function() {
         });
       }
     }
-  });
+
+    // ローディング画面を非表示
+    $('.loading').fadeOut(300);
+  }); 
 });
