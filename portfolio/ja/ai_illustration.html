@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIイラスト | My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="loading">
+    <div class="loading-icon">
+      <i class="fas fa-spinner fa-spin fa-3x"></i>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html"><i class="fas fa-home fa-2x"></i></a> <span>AIイラスト</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-ai">
+    <div class="container">
+      <div class="hero-message">
+        <h1>AIと遊び、創造する</h1>
+        <p>AIが生み出す無限の可能性を探求し、<br class="sp-only">新たな表現に挑戦する。</p>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/ai_hero.jpg" alt="AIイラストのメインビジュアル">
+        </div>
+    </div>
+  </section>
+
+  <section class="categories" id="categories">
+    <div class="container">
+      <h2>カテゴリー</h2>
+      <div class="category-grid">
+        <a href="#fantasy" class="category-item" data-category="fantasy">
+          <div class="category-image">
+            <img src="assets/images/fantasy.jpg" alt="ファンタジー">
+          </div>
+          <h3>ファンタジー</h3>
+        </a>
+        <a href="#character" class="category-item" data-category="character">
+          <div class="category-image">
+            <img src="assets/images/character.jpg" alt="キャラクター">
+          </div>
+          <h3>キャラクター</h3>
+        </a>
+        <a href="#abstract" class="category-item" data-category="abstract">
+          <div class="category-image">
+            <img src="assets/images/abstract.jpg" alt="抽象画">
+          </div>
+          <h3>抽象画</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="fantasy">
+    <div class="container">
+      <h3>ファンタジー</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-aos="zoom-in">
+          <a href="ai_detail.html" class="image-link">
+            <img src="assets/images/ai_sample1.jpg" alt="AIイラスト1">
+          </a>
+        </div>
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+          <a href="ai_detail.html" class="image-link">
+            <img src="assets/images/ai_sample2.jpg" alt="AIイラスト2">
+          </a>
+        </div>
+        <!-- 他のイラストを追加 -->
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="character">
+    <div class="container">
+      <h3>キャラクター</h3>
+      <div class="gallery-grid">
+        <!-- キャラクターイラストを追加 -->
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="abstract">
+    <div class="container">
+      <h3>抽象画</h3>
+      <div class="gallery-grid">
+        <!-- 抽象画イラストを追加 -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2024 山川 朔弥</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+        <!-- 他のSNSを追加 -->
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+  <script src="assets/js/main.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    $(window).on('load', function(){
+      $(".loading").fadeOut(300);
+    });
+
+    AOS.init();
+
+    // カテゴリー選択時のスクロール
+    $('.category-item').on('click', function(e) {
+      e.preventDefault();
+      var target = $(this).attr('href');
+      var position = $(target).offset().top;
+      $('body, html').animate({scrollTop:position}, 500, 'swing');
+    });
+
+    // 画像ホバー時のアニメーション
+    $('.image-link').hover(function() {
+      $(this).find('img').css('transform', 'scale(1.1)');
+    }, function() {
+      $(this).find('img').css('transform', 'scale(1)');
+    });
+  </script>
+</body>
+</html>
