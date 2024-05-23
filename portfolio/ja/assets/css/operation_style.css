@@ -1,8 +1,8 @@
 /* 基本設定 */
 body {
-  font-family: 'Press Start 2P', cursive;
-  background-color: #121212;
-  color: #eee;
+  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+  background-color: #1e272e; /* ダークグレー */
+  color: #eee; 
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -11,21 +11,24 @@ body {
 
 h1, h2, h3 {
   font-weight: 700;
-  color: #fff;
+}
+
+h1, h2 {
+  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
 }
 
 p {
-  font-family: 'Press Start 2P', cursive;
+  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif; 
 }
 
 a {
-  color: #00FFFF;
+  color: #00a8ff; /* 鮮やかな青 */
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease; 
 }
 
 a:hover {
-  color: #6900D6;
+  color: #66d9ff; /* より明るい青 */
 }
 
 /* ローディング画面 */
@@ -35,22 +38,22 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #121212;
+  background-color: #1e272e; /* ダークグレー */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 9999; 
 }
 
 .loading-icon {
   font-size: 3em;
-  color: #00c6ff;
+  color: #00a8ff; /* 鮮やかな青 */
 }
 
 /* ヘッダー */
 header {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  padding: 20px 0;
+  background: linear-gradient(to right, #1e272e, #353b48); /* シックなダークトーン */
+  padding: 30px 0;
   text-align: center;
   position: relative;
   z-index: 2;
@@ -67,216 +70,112 @@ header .header-content i {
 }
 
 header h1 {
-  font-size: 2em;
+  font-size: 3em;
   margin: 0;
 }
 
 header p {
-  font-size: 1em;
+  font-size: 1.2em;
   margin-bottom: 0;
-}
-
-/* スタート画面 */
-.game-start {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-}
-
-.game-start h2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
-}
-
-.character {
-  margin-bottom: 30px;
-}
-
-.character img {
-  width: 150px;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.start-button {
-  padding: 10px 20px;
-  background-color: #00a8ff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.start-button:hover {
-  background-color: #0072ff;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* スキルツリー */
-.skill-tree {
-  display: none;
-  padding: 80px 0;
-  text-align: center;
-  background-color: #1e272e;
-}
-
-.skill-tree h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-}
-
-.tree {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.skill-node {
-  width: 150px;
-  padding: 20px;
-  background-color: #353b48;
-  border: 3px solid #00a8ff;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.skill-node:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.skill-node i {
-  font-size: 3em;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.skill-node p {
-  font-size: 0.8em;
-  margin-bottom: 10px;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 10px;
-  background-color: #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.progress {
-  height: 100%;
-  background-color: #00a8ff;
-  width: 10%;
-  transition: width 0.3s ease;
-}
-
-.skill-points {
-  margin-top: 30px;
-  font-size: 1em;
-}
-
-#reset-button {
-  margin-top: 15px;
-  padding: 8px 15px;
-  background-color: #424242;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 0.9em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#reset-button:hover {
-  background-color: #333;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* 実績セクション */
 .achievements {
   padding: 80px 0;
   text-align: center;
-  background-color: #1e272e;
+  background-color: #1e272e; /* ダークグレー */
 }
 
 .achievements h2 {
   font-size: 2.5em;
   margin-bottom: 40px;
+  color: #eee;
 }
 
 .achievement-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
-.achievement-block {
-  background-color: #353b48; 
-  padding: 30px;
+.achievement-item {
+  background-color: #353b48; /* チャコールグレー */
   border-radius: 10px;
+  padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  text-align: center;
-  aspect-ratio: 1 / 1;
-  position: relative;
-  overflow: hidden;
+  color: #eee;
 }
 
-.achievement-block::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom right, #00a8ff, #353b48); 
-  opacity: 0.2;
-}
-
-.achievement-block:hover {
+.achievement-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.achievement-block:hover p { 
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
+.achievement-content {
+  text-align: center;
 }
 
-.achievement-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-.achievement-item i {
-  font-size: 3em;
-  color: #fff;
+.achievement-content h3 {
+  font-size: 2.5em;
   margin-bottom: 10px;
 }
 
-.achievement-item p {
-  font-size: 1.1em;
-  margin-bottom: 0;
-  transition: transform 0.3s ease;
+.achievement-content h3 .count {
+  font-size: 3em;
+  color: #00a8ff;
+}
+
+.achievement-content p {
+  font-size: 1em;
+}
+
+/* スキルセットセクション */
+.skills {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #283139;
+}
+
+.skills h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #eee;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.skill-item {
+  background-color: #353b48; 
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  color: #eee;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.skill-item i {
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.skill-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.skill-item p {
+  font-size: 0.9em;
 }
 
 /* お問い合わせセクション */
@@ -292,6 +191,7 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #eee;
 }
 
 .contact h2 i {
@@ -315,7 +215,7 @@ footer {
 }
 
 .social-links a {
-  margin: 0 5px; 
+  margin: 0 5px;
 }
 
 /* コンテンツエリア */
@@ -327,25 +227,8 @@ footer {
 
 /* レスポンシブデザイン */
 @media screen and (max-width: 768px) {
-  .achievement-grid, 
-  .skill-grid, 
-  .portfolio-grid,
-  .tree {
+  .achievement-grid, .skill-grid, .portfolio-grid {
     grid-template-columns: 1fr;
-  }
-
-  .skill-node {
-    width: calc(100% - 40px); /* 画面幅いっぱい */
-  }
-
-  .buttons {
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  .start-button {
-    flex: 1; /* ボタンの幅を均等に */
-    font-size: 0.8em;
   }
 }
 
