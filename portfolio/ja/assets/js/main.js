@@ -54,11 +54,22 @@ $(document).ready(function() {
     autoplay: true,       // 自動再生
     autoplaySpeed: 1000,  // 自動再生の速度
     arrows: false,        // 左右の矢印を非表示
-    dots: true,          // ドットナビゲーションを表示
+    dots: false,          // ドットナビゲーションを非表示
     infinite: true,      // 無限ループ
     speed: 300,          // スライドの速度を300msに変更 
     fade: true,          // フェードエフェクト
-    cssEase: 'linear'    // イージング
+    cssEase: 'linear',    // イージング
+    // レスポンシブ設定を追加
+    responsive: [
+      {
+        breakpoint: 768, // 画面幅768px以下の場合
+        settings: {
+          dots: false, // ドットを非表示
+          arrows: false, // 矢印も非表示
+          slidesToShow: 1 // スライド表示数を1に
+        }
+      }
+    ]
   });
 });
 
