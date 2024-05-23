@@ -169,16 +169,14 @@
           container.append(achievementItem);
 
           // ホバーでポップアップ表示
-          let timeoutId;
-          achievementItem.hover(function() {
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-              $(this).find('.achievement-popup').addClass('show');
-            }, 200); 
-          }, function() {
-            clearTimeout(timeoutId); 
-            $(this).find('.achievement-popup').removeClass('show'); 
-          });
+          achievementItem.hover(
+            function() {
+                $(this).find('.achievement-popup').addClass('show');
+            }, 
+            function() {
+                $(this).find('.achievement-popup').removeClass('show');
+            }
+          );
         });
       }
 
