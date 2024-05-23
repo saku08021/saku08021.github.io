@@ -12,8 +12,8 @@ $(document).ready(function() {
     elements.forEach(element => {
       let targetNumber = parseInt(element.textContent, 10);
       let currentNumber = 0;
-      let duration = 3000;
-      let increment = targetNumber / (duration / 10);
+      let duration = 3000; 
+      let increment = targetNumber / (duration / 10); 
 
       let timer = setInterval(() => {
         currentNumber += increment;
@@ -55,23 +55,17 @@ $(document).ready(function() {
       const achievementItem = $(`
         <div class="achievement-item" data-aos="fade-up" data-aos-delay="${index * 100}">
           <h3 class="achievement-title">${item.title}</h3>
+          <div class="achievement-popup">
+            <h4>${item.title}</h4>
+            <p>${item.detail}</p>
+          </div>
         </div>
       `);
-      // ポップアップ要素を作成
-      const popup = $(`
-        <div class="achievement-popup">
-          <h4>${item.title}</h4>
-          <p>${item.detail}</p>
-        </div>
-      `);
-      achievementItem.append(popup);
       container.append(achievementItem);
 
-      // ホバーまたはクリックでポップアップ表示
-      achievementItem.on('mouseenter click', function() {
-        popup.fadeIn(200);
-      }).on('mouseleave', function() {
-        popup.fadeOut(200);
+      // クリックでポップアップ表示/非表示を切り替え
+      achievementItem.on('click', function() {
+        $(this).find('.achievement-popup').toggleClass('show');
       });
     });
   }
