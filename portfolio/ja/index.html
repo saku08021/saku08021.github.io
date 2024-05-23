@@ -19,9 +19,8 @@
   <header>
     <div class="container">
       <div class="header-content">
-        <i class="fas fa-chart-line fa-2x"></i> <span>Webマーケター 山川 朔弥</span>
+        <i class="fas fa-chart-line fa-2x"></i> <span>My Portfolio</span>
       </div>
-      <p>Webマーケティングでビジネスを成功へ導く</p>
     </div>
   </header>
 
@@ -175,6 +174,12 @@
     </div>
   </footer>
 
+  <div class="background-animation">
+    <div class="data-stream"></div>
+    <div class="data-stream" style="animation-delay: 1s;"></div>
+    <div class="data-stream" style="animation-delay: 2s;"></div>
+  </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="assets/js/main.js"></script>
@@ -211,14 +216,25 @@
     countUp('.count');
 
     $('.career-slider').slick({
-      autoplay: true,       // 自動再生
-      autoplaySpeed: 1000,  // 自動再生の速度
-      arrows: false,        // 左右の矢印を非表示
-      dots: false,          // ドットナビゲーションを非表示
-      infinite: true,      // 無限ループ
-      speed: 300,          // スライドの速度を300msに変更 
-      fade: true,          // フェードエフェクト
-      cssEase: 'linear'    // イージング
+      autoplay: true,
+      autoplaySpeed: 1000,
+      arrows: false,
+      dots: false,
+      infinite: true,
+      speed: 300,
+      fade: true,
+      cssEase: 'linear',
+      // レスポンシブ設定を追加
+      responsive: [
+        {
+          breakpoint: 768, // 画面幅768px以下の場合
+          settings: {
+            dots: false, // ドットを非表示
+            arrows: false,
+            slidesToShow: 1, 
+          }
+        }
+      ]
     });
   </script>
 </body>
