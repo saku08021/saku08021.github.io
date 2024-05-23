@@ -1,0 +1,157 @@
+/* 基本設定 */
+body {
+  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+  background-color: #1e272e;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h1, h2 {
+  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+}
+
+p {
+  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif; 
+}
+
+a {
+  color: #00a8ff;
+  text-decoration: none;
+  transition: color 0.3s ease; 
+}
+
+a:hover {
+  color: #66d9ff;
+}
+
+/* ローディング画面 */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1e272e; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+}
+
+.loading-icon {
+  font-size: 3em;
+  color: #00a8ff; 
+}
+
+/* ヘッダー */
+header {
+  background: linear-gradient(to right, #1e272e, #353b48); /* シックなダークトーン */
+  padding: 30px 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .header-content i {
+  margin-right: 10px;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+/* 3D空間 */
+#scene-container {
+  width: 100%;
+  height: 600px; /* 3D空間の高さ */
+  margin: 50px 0; /* 上下マージン */
+  background-color: #121212; /* 背景色 */
+}
+
+/* お問い合わせセクション */
+.contact {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #1e272e; 
+}
+
+.contact h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact h2 i {
+  margin-right: 10px;
+}
+
+.contact p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* フッター */
+footer {
+  background-color: #000;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  margin: 0 5px;
+}
+
+/* コンテンツエリア */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+  .achievement-grid, .skill-grid, .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* フォーム */
+.form-item {
+  margin-bottom: 15px;
+}
+
+.form-item input[type="text"],
+.form-item input[type="email"],
+.form-item textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #181818;
+  color: #eee; 
+}
