@@ -22,13 +22,13 @@ p {
 }
 
 a {
-  color: #00a8ff; /* 鮮やかな青 */
+  color: #EA5455; /* アクセントカラーに変更 */
   text-decoration: none;
   transition: color 0.3s ease; 
 }
 
 a:hover {
-  color: #66d9ff; /* より明るい青 */
+  color: #FF9F43; /* アクセントカラーに変更 */
 }
 
 /* ローディング画面 */
