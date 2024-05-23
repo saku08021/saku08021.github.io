@@ -1,40 +1,3 @@
-// AOSの初期化
-AOS.init({
-  duration: 1000, // アニメーションの時間（ミリ秒）
-  easing: 'ease-in-out', // アニメーションの easing
-});
-
-// スムーススクロール
-const links = document.querySelectorAll('a[href^="#"]');
-
-links.forEach(link => {
-  link.addEventListener('click', function(event) {
-    event.preventDefault();
-
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-
-    targetElement.scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-// ホバー時のアニメーション (実績、スキルセット、ポートフォリオ)
-const blocks = document.querySelectorAll('.achievement-block, .skill-box, .portfolio-block');
-
-blocks.forEach(block => {
-  block.addEventListener('mouseover', () => {
-    block.style.transform = 'translateY(-5px)';
-    block.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
-  });
-
-  block.addEventListener('mouseout', () => {
-    block.style.transform = 'translateY(0)';
-    block.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-  });
-});
-
 $(document).ready(function() {
   $(window).on('load', function(){
     $(".loading").fadeOut(300);
@@ -49,8 +12,8 @@ $(document).ready(function() {
     elements.forEach(element => {
       let targetNumber = parseInt(element.textContent, 10);
       let currentNumber = 0;
-      let duration = 3000; 
-      let increment = targetNumber / (duration / 10); 
+      let duration = 3000;
+      let increment = targetNumber / (duration / 10);
 
       let timer = setInterval(() => {
         currentNumber += increment;
@@ -66,38 +29,55 @@ $(document).ready(function() {
 
   countUp('.count');
 
-  // スタート画面のボタン
-  $('.start-button').on('click', function() {
-    let target = $(this).data('target');
-    $('.game-start').fadeOut(500, function() {
-      $(target).fadeIn(500);
+  // 実績データ
+  const achievementsData = {
+    sns: [
+      { title: 'Twitterアカウント運用', detail: '0→13万人達成 (その他万垢多数達成)' },
+      { title: 'Instagramフォロワー', detail: '週間インプレッション3,000,000達成 / 1日最大獲得リスト数1,000人達成 / フォロワー数20,000人達成 / フォロワー数6,000人達成' },
+      { title: 'YouTubeアカウント運用', detail: '0→5万人達成' },
+      { title: '自社SNS(X)アカウント運用', detail: '50垢同時運用' }
+    ],
+    contents: [
+      { title: '担当コンテンツ売上', detail: '3ヶ月で200%増加' },
+      { title: '担当コンテンツ純利益', detail: '3ヶ月で200%達成 / 事業責任者として半年で社内利益180%達成' },
+      { title: 'コンテンツ販売', detail: '業務効率化・半自動化によりマーケティングコスト35%減 / 売上200%達成' }
+    ],
+    consulting: [
+      { title: 'コンサルティング業務', detail: '法人2社、個人事業主3名に業務フロー、マーケティングなどのコンサルティングを実施' },
+      { title: 'マーケティングコンサルティング', detail: '業務フロー改善、各種アナリティクスの活用方法の教育 / コンテンツ作成の効率化、SNS運用・コンテンツ販売の半自動化を行い、マーケティングコスト35%削減 / リード獲得数増加に伴い売上200%達成' }
+    ]
+  };
+
+  // 実績項目の動的生成
+  function createAchievementItems(category) {
+    const container = $(`#${category}-achievements`);
+    achievementsData[category].forEach((item, index) => {
+      const achievementItem = $(`
+        <div class="achievement-item" data-aos="fade-up" data-aos-delay="${index * 100}">
+          <h3 class="achievement-title">${item.title}</h3>
+        </div>
+      `);
+      // ポップアップ要素を作成
+      const popup = $(`
+        <div class="achievement-popup">
+          <h4>${item.title}</h4>
+          <p>${item.detail}</p>
+        </div>
+      `);
+      achievementItem.append(popup);
+      container.append(achievementItem);
+
+      // ホバーまたはクリックでポップアップ表示
+      achievementItem.on('mouseenter click', function() {
+        popup.fadeIn(200);
+      }).on('mouseleave', function() {
+        popup.fadeOut(200);
+      });
     });
-  });
+  }
 
-  // スキルツリー
-  let skillPoints = 10;
-  $('#points').text(skillPoints);
-
-  $('.skill-node').on('click', function() {
-    let skill = $(this).data('skill');
-    let level = parseInt($(this).find('.level').text());
-    let maxLevel = parseInt($(this).data('level'));
-
-    if (level < maxLevel && skillPoints > 0) {
-      level++;
-      skillPoints--;
-      $(this).find('.level').text(level);
-      $(this).find('.progress').css('width', (level / maxLevel * 100) + '%');
-      $('#points').text(skillPoints);
-    }
-  });
-
-  // リセットボタン
-  $('#reset-button').on('click', function() {
-    skillPoints = 10;
-    $('#points').text(skillPoints);
-    $('.skill-node .level').text(1);
-    $('.skill-node .progress').css('width', '10%');
-  });
-
+  // 各カテゴリーの実績項目を生成
+  createAchievementItems('sns');
+  createAchievementItems('contents');
+  createAchievementItems('consulting');
 });
