@@ -42,6 +42,7 @@ $(document).ready(function() {
     const iconHTML = `<i class="${data.icon} fa-2x"></i>`;
     const element = document.createElement('div');
     element.innerHTML = iconHTML;
+    element.className = 'label';
     const icon = new THREE.CSS2DObject(element);
     icon.position.set(0, 0, 0.1);
     plane.add(icon);
