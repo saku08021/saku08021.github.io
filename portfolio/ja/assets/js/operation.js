@@ -1,81 +1,82 @@
-$(document).ready(function() {
-  $(window).on('load', function(){
-    $(".loading").fadeOut(300);
-  });
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio - 運用実績</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/operation_style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html"><i class="fas fa-home fa-2x"></i></a> <span>運用実績</span>
+      </div>
+    </div>
+  </header>
 
-  AOS.init();
+  <section id="scene-container"></section>
 
-  // カウントアップアニメーション
-  function countUp(className) {
-    let elements = document.querySelectorAll(className);
-
-    elements.forEach(element => {
-      let targetNumber = parseInt(element.textContent, 10);
-      let currentNumber = 0;
-      let duration = 3000; 
-      let increment = targetNumber / (duration / 10); 
-
-      let timer = setInterval(() => {
-        currentNumber += increment;
-        element.textContent = Math.ceil(currentNumber);
-
-        if (currentNumber >= targetNumber) {
-          clearInterval(timer);
-          element.textContent = targetNumber;
-        }
-      }, 10);
-    });
-  }
-
-  countUp('.count');
-
-  // 実績データ
-  const achievementsData = {
-    sns: [
-      { title: 'Twitterフォロワー最大数', detail: '0→13万人達成 (その他万垢多数達成)' },
-      { title: 'YouTube登録者最大数', detail: '0→5万人達成' },
-      { title: 'Instagramフォロワー最大数', detail: '20,000人達成' },
-      { title: '1日のリスト獲得最大数', detail: '1,000人達成' }
-    ],
-    contents: [
-      { title: '担当コンテンツ売上', detail: '3ヶ月で200%増加' },
-      { title: '会社売上', detail: '半年で社内利益180%達成' }
-    ],
-    consulting: [
-      { title: '業務効率化コンサルティング', detail: 'コンテンツ作成における業務の効率化、SNS運用,コンテンツ販売の半自動化を行いマーケティングコスト35%減。' },
-      { title: 'マーケティングコンサルティング', detail: 'リード獲得数増加に伴い売上200%達成' }
-    ]
-  };
-
-  // 実績項目の動的生成
-  function createAchievementItems(category) {
-    const container = $(`#${category}-achievements`);
-    achievementsData[category].forEach((item, index) => {
-      const achievementItem = $(`
-        <div class="achievement-item" data-aos="fade-up" data-aos-delay="${index * 100}">
-          <h3 class="achievement-title">${item.title}</h3>
-          <div class="achievement-popup">
-            <h4>${item.title}</h4>
-            <p>${item.detail}</p>
-          </div>
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2>スキルセット</h2>
+      <div class="skill-grid">
+        <div class="skill-item" data-aos="fade-up">
+          <i class="fab fa-twitter fa-3x"></i>
+          <h3>SNSマーケティング</h3>
+          <p>Twitter, Instagram, Youtubeなど<br>各プラットフォームの特性を活かした<br>戦略立案と運用</p>
         </div>
-      `);
-      container.append(achievementItem);
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-chart-line fa-3x"></i>
+          <h3>Web解析</h3>
+          <p>Google Analyticsなどを活用した<br>アクセス状況分析、課題発見、<br>改善提案</p>
+        </div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-search fa-3x"></i>
+          <h3>SEO</h3>
+          <p>キーワード調査、コンテンツSEO、<br>テクニカルSEOなど、検索エンジンに<br>最適化されたサイト構築</p>
+        </div>
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+          <i class="fas fa-bullhorn fa-3x"></i>
+          <h3>広告運用</h3>
+          <p>リスティング広告、ディスプレイ広告など<br>各種広告媒体の運用と効果測定</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      // ホバーでポップアップ表示
-      achievementItem.hover(
-        function() {
-            $(this).find('.achievement-popup').addClass('show');
-        }, 
-        function() {
-            $(this).find('.achievement-popup').removeClass('show');
-        }
-      );
-    });
-  }
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2><i class="fas fa-envelope fa-lg"></i> お問い合わせ</h2>
+      <p>ご依頼やご相談は、お気軽にご連絡ください。</p>
+      <form action="#" method="post">
+        <div class="form-item">
+          <input type="text" name="name" placeholder="お名前" required>
+        </div>
+        <div class="form-item">
+          <input type="email" name="email" placeholder="メールアドレス" required>
+        </div>
+        <div class="form-item">
+          <textarea name="message" placeholder="お問い合わせ内容" required></textarea>
+        </div>
+        <button type="submit" class="btn">送信</button>
+      </form>
+    </div>
+  </section>
 
-  // 各カテゴリーの実績項目を生成
-  createAchievementItems('sns');
-  createAchievementItems('contents');
-  createAchievementItems('consulting');
-});
+  <footer>
+    <div class="container">
+      <p>© 2024 山川 朔弥</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/operation.js"></script>
+</body>
+</html>
