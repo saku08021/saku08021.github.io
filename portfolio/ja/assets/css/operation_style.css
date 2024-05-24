@@ -131,7 +131,7 @@ header p {
   margin-right: 10px;
 }
 
-contact p {
+.contact p {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
@@ -215,3 +215,4 @@ footer {
   transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
+
