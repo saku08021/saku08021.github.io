@@ -73,9 +73,12 @@ $(document).ready(function() {
     achievementObjects.forEach((object, index) => {
       object.position.add(velocity[index]);
 
-      if (object.position.x > 20 || object.position.x < -20) velocity[index].x *= -1;
-      if (object.position.y > 10 || object.position.y < -10) velocity[index].y *= -1;
-      if (object.position.z > 20 || object.position.z < -20) velocity[index].z *= -1;
+      const containerWidth = 20;
+      const containerHeight = 10;
+
+      if (object.position.x > containerWidth || object.position.x < -containerWidth) velocity[index].x *= -1;
+      if (object.position.y > containerHeight || object.position.y < -containerHeight) velocity[index].y *= -1;
+      if (object.position.z > containerWidth || object.position.z < -containerWidth) velocity[index].z *= -1;
     });
 
     renderer.render(scene, camera);
@@ -107,15 +110,15 @@ $(document).ready(function() {
   function onClick() {
     raycaster.setFromCamera(mouse, camera);
 
-    const intersects = raycaster.intersectObjects(achievementObjects);
+    const intersects = raycaster.intersectObjects(achievementObjects, true);
 
     if (intersects.length > 0) {
       const clickedObject = intersects[0].object;
 
       const popup = $(`
         <div class="popup">
-          <h3>${clickedObject.userData.title}</h3>
-          <p>${clickedObject.userData.value}</p>
+          <h3>${clickedObject.parent.userData.title}</h3>
+          <p>${clickedObject.parent.userData.value}</p>
           <button class="close-button">閉じる</button>
         </div>
       `);
