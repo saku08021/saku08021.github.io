@@ -73,8 +73,8 @@ $(document).ready(function() {
     achievementObjects.forEach((object, index) => {
       object.position.add(velocity[index]);
 
-      const containerWidth = 20;
-      const containerHeight = 10;
+      const containerWidth = 15;
+      const containerHeight = 7.5;
 
       if (object.position.x > containerWidth || object.position.x < -containerWidth) velocity[index].x *= -1;
       if (object.position.y > containerHeight || object.position.y < -containerHeight) velocity[index].y *= -1;
