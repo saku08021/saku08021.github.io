@@ -1,6 +1,6 @@
 body {
   font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
-  background-color: #1e272e;
+  background-color: #1e272e; /* もとの背景色を保持 */
   color: #eee;
   margin: 0;
   padding: 0;
@@ -17,13 +17,13 @@ h1, h2 {
 }
 
 p {
-  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif; 
+  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
 }
 
 a {
   color: #00a8ff;
   text-decoration: none;
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -60,7 +60,7 @@ header p {
 
 #scene-container {
   width: 100%;
-  height: 600px;
+  height: 600px; /* 必要に応じて高さを調整 */
   margin: 50px 0;
   background: linear-gradient(to bottom right, #141e30, #243b55);
   position: relative;
@@ -69,7 +69,7 @@ header p {
 .skills {
   padding: 80px 0;
   text-align: center;
-  background-color: #283139; 
+  background-color: #283139; /* もとの背景色を保持 */
 }
 
 .skills h2 {
@@ -99,7 +99,7 @@ header p {
 }
 
 .skill-item i {
-  font-size: 4em;
+  font-size: 4em; /* アイコンのサイズを変更 */
   color: #fff;
   margin-bottom: 15px;
 }
@@ -116,7 +116,7 @@ header p {
 .contact {
   padding: 80px 0;
   text-align: center;
-  background-color: #1e272e; 
+  background-color: #1e272e; /* もとの背景色を保持 */
 }
 
 .contact h2 {
@@ -175,7 +175,7 @@ footer {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #181818;
-  color: #eee; 
+  color: #eee;
 }
 
 .popup {
