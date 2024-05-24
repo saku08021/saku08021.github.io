@@ -30,9 +30,10 @@ $(document).ready(function() {
   ];
 
   const achievementObjects = [];
+  const velocity = [];
   achievementsData.forEach((data, index) => {
     const element = document.createElement('div');
-    element.innerHTML = `<i class="${data.icon} fa-2x" style="color:${data.color};"></i>`;
+    element.innerHTML = `<i class="${data.icon} fa-4x" style="color:${data.color};"></i>`;
     element.className = 'label';
     const icon = new THREE.CSS2DObject(element);
     icon.position.set(0, 0, 0.1);
@@ -53,24 +54,14 @@ $(document).ready(function() {
     );
 
     plane.userData = data;
+    velocity.push(new THREE.Vector3(
+      (Math.random() - 0.5) * 0.2,
+      (Math.random() - 0.5) * 0.2,
+      (Math.random() - 0.5) * 0.2
+    ));
 
     achievementObjects.push(plane);
     scene.add(plane);
-
-    // Tween for smooth animation
-    const updatePosition = () => {
-      new TWEEN.Tween(plane.position)
-        .to({
-          x: (Math.random() - 0.5) * 40,
-          y: (Math.random() - 0.5) * 20,
-          z: (Math.random() - 0.5) * 20
-        }, 5000)
-        .easing(TWEEN.Easing.Quadratic.InOut)
-        .onComplete(updatePosition)
-        .start();
-    };
-
-    updatePosition();
   });
 
   camera.position.z = 30;
@@ -78,6 +69,14 @@ $(document).ready(function() {
   function animate(time) {
     requestAnimationFrame(animate);
     TWEEN.update(time);
+
+    achievementObjects.forEach((object, index) => {
+      object.position.add(velocity[index]);
+
+      if (object.position.x > 20 || object.position.x < -20) velocity[index].x *= -1;
+      if (object.position.y > 10 || object.position.y < -10) velocity[index].y *= -1;
+      if (object.position.z > 20 || object.position.z < -20) velocity[index].z *= -1;
+    });
 
     renderer.render(scene, camera);
     labelRenderer.render(scene, camera);
