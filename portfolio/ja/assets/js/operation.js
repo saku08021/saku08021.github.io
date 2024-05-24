@@ -5,6 +5,12 @@ $(document).ready(function() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.getElementById('scene-container').appendChild(renderer.domElement);
 
+  const labelRenderer = new THREE.CSS2DRenderer();
+  labelRenderer.setSize(window.innerWidth, window.innerHeight);
+  labelRenderer.domElement.style.position = 'absolute';
+  labelRenderer.domElement.style.top = '0';
+  document.getElementById('scene-container').appendChild(labelRenderer.domElement);
+
   const ambientLight = new THREE.AmbientLight(0x404040);
   scene.add(ambientLight);
 
@@ -70,6 +76,7 @@ $(document).ready(function() {
     });
 
     renderer.render(scene, camera);
+    labelRenderer.render(scene, camera);
   }
 
   animate();
@@ -78,6 +85,7 @@ $(document).ready(function() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    labelRenderer.setSize(window.innerWidth, window.innerHeight);
   });
 
   const mouse = new THREE.Vector2();
