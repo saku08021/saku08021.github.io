@@ -55,9 +55,9 @@ $(document).ready(function() {
 
     plane.userData = data;
     velocity.push(new THREE.Vector3(
-      (Math.random() - 0.5) * 0.2,
-      (Math.random() - 0.5) * 0.2,
-      (Math.random() - 0.5) * 0.2
+      (Math.random() - 0.5) * 0.1,
+      (Math.random() - 0.5) * 0.1,
+      (Math.random() - 0.5) * 0.1
     ));
 
     achievementObjects.push(plane);
