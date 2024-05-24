@@ -3,48 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio - 運用実績</title>
+  <title>My Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/operation_style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS2DRenderer.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+  <div class="loading">
+    <div class="loading-icon">
+      <i class="fas fa-spinner fa-spin fa-3x"></i>
+    </div>
+  </div>
+
   <header>
     <div class="container">
       <div class="header-content">
-        <a href="index.html"><i class="fas fa-home fa-2x"></i></a> <span>運用実績</span>
+        <i class="fas fa-chart-line fa-2x"></i> <span>My Portfolio</span>
       </div>
     </div>
   </header>
 
-  <section id="scene-container" style="position: relative; width: 100%; height: 600px; overflow: hidden;"></section>
+  <section class="career" id="career">
+    <div class="container">
+      <h2>職歴</h2>
+      <div class="career-slider">
+        <div class="career-item">
+          <h3>2019~中高生向けの個人塾経営を行う</h3>
+        </div>
+        <div class="career-item">
+          <h3>2021~マーケティング会社にマーケティング責任者として参画</h3>
+        </div>
+        <div class="career-item">
+          <h3>2022~個人事業主として戦略コンサルを行う</h3>
+        </div>
+        <div class="career-item">
+          <h3>2022~SaaS開発企業に取締役として参画</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="achievements" id="achievements">
+    <div class="container">
+      <h2>実績</h2>
+      <div class="achievement-grid">
+        <div class="achievement-block" data-aos="fade-up">
+          <div class="achievement-item">
+            <i class="fas fa-users fa-3x"></i>
+            <p>運用SNS総フォロワー<br><span class="count">250000</span>人達成</p>
+          </div>
+        </div>
+        <div class="achievement-block" data-aos="fade-up" data-aos-delay="100">
+          <div class="achievement-item">
+            <i class="fas fa-chart-line fa-3x"></i>
+            <p>戦略コンサルティング<br>3ヶ月で純利益<span class="count">150</span>%増加</p>
+          </div>
+        </div>
+        <div class="achievement-block" data-aos="fade-up" data-aos-delay="200">
+          <div class="achievement-item">
+            <i class="fas fa-rocket fa-3x"></i>
+            <p>SaaSツール開発<br>リリース</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="skills" id="skills">
     <div class="container">
       <h2>スキルセット</h2>
       <div class="skill-grid">
-        <div class="skill-item" data-aos="fade-up">
-          <i class="fab fa-twitter fa-4x" style="color:#1DA1F2;"></i>
-          <h3>SNSマーケティング</h3>
-          <p>Twitter, Instagram, Youtubeなど<br>各プラットフォームの特性を活かした<br>戦略立案と運用</p>
+        <div class="skill-box" data-aos="fade-up">
+          <div class="skill-item">
+            <i class="fab fa-twitter fa-3x"></i>
+            <h3>SNSマーケティング</h3>
+            <p>Twitter, Instagram, Youtubeなど様々な<br>プラットフォームでの運用経験が豊富です。</p>
+          </div>
         </div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-chart-line fa-4x" style="color:#00FF00;"></i>
-          <h3>Web解析</h3>
-          <p>Google Analyticsなどを活用した<br>アクセス状況分析、課題発見、<br>改善提案</p>
+        <div class="skill-box" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-item">
+            <i class="fas fa-palette fa-3x"></i>
+            <h3>Webデザイン</h3>
+            <p>Figma, Photoshop, Illustratorなどを用いた<br>Webデザイン制作が可能です</p>
+          </div>
         </div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-          <i class="fas fa-search fa-4x" style="color:#FFA500;"></i>
-          <h3>SEO</h3>
-          <p>キーワード調査、コンテンツSEO、<br>テクニカルSEOなど、検索エンジンに<br>最適化されたサイト構築</p>
+        <div class="skill-box" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-item">
+            <i class="fas fa-code fa-3x"></i>
+            <h3>Web開発</h3>
+            <p>PMやスクラムマスターとしてSaas系ツールの<br>Web開発経験があります。</p>
+          </div>
         </div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
-          <i class="fas fa-bullhorn fa-4x" style="color:#EA5455;"></i>
-          <h3>広告運用</h3>
-          <p>リスティング広告、ディスプレイ広告など<br>各種広告媒体の運用と効果測定</p>
+        <div class="skill-box" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-item">
+            <i class="fas fa-robot fa-3x"></i>
+            <h3>AI技術</h3>
+            <p>Midjourney, Stable Diffusionなど、AIツールを<br>用いたイラスト生成やツール開発を行っています</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2>ポートフォリオ</h2>
+      <div class="portfolio-grid">
+        <a href="design.html" class="portfolio-block" data-aos="fade-up">
+          <div class="portfolio-item">
+            <i class="fas fa-palette fa-3x"></i>
+            <h3>デザイン</h3>
+          </div>
+        </a>
+        <a href="operation.html" class="portfolio-block" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-item">
+            <i class="fas fa-chart-line fa-3x"></i>
+            <h3>運用</h3>
+          </div>
+        </a>
+        <a href="ai_illustration.html" class="portfolio-block" data-aos="fade-up" data-aos-delay="300">
+          <div class="portfolio-item">
+            <i class="fas fa-image fa-3x"></i>
+            <h3>AIイラスト</h3>
+          </div>
+        </a>
+        <a href="ai_tools.html" class="portfolio-block" data-aos="fade-up" data-aos-delay="400">
+          <div class="portfolio-item">
+            <i class="fas fa-robot fa-3x"></i>
+            <h3>AIツール</h3>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -74,11 +163,73 @@
       <div class="social-links">
         <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
         <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+        <!-- 他のSNSを追加 -->
       </div>
     </div>
   </footer>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="assets/js/operation.js"></script>
+  <div class="background-animation">
+    <div class="data-stream"></div>
+    <div class="data-stream" style="animation-delay: 1s;"></div>
+    <div class="data-stream" style="animation-delay: 2s;"></div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    $(window).on('load', function(){
+      $(".loading").fadeOut(300);
+    });
+
+    AOS.init();
+
+    // カウントアップアニメーション
+    function countUp(className) {
+      let elements = document.querySelectorAll(className);
+
+      elements.forEach(element => {
+        let targetNumber = parseInt(element.textContent, 10);
+        let currentNumber = 0;
+        let duration = 3000; 
+        let increment = targetNumber / (duration / 10); 
+
+        let timer = setInterval(() => {
+          currentNumber += increment;
+          element.textContent = Math.ceil(currentNumber);
+
+          if (currentNumber >= targetNumber) {
+            clearInterval(timer);
+            element.textContent = targetNumber;
+          }
+        }, 10);
+      });
+    }
+
+    countUp('.count');
+
+    $('.career-slider').slick({
+      autoplay: true,
+      autoplaySpeed: 1000,
+      arrows: false,
+      dots: false,
+      infinite: true,
+      speed: 300,
+      fade: true,
+      cssEase: 'linear',
+      // レスポンシブ設定を追加
+      responsive: [
+        {
+          breakpoint: 768, // 画面幅768px以下の場合
+          settings: {
+            dots: false, // ドットを非表示
+            arrows: false,
+            slidesToShow: 1, 
+          }
+        }
+      ]
+    });
+  </script>
 </body>
 </html>
