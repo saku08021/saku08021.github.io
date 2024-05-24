@@ -37,9 +37,7 @@ $(document).ready(function() {
     const icon = new THREE.CSS2DObject(element);
     icon.position.set(0, 0, 0.1);
 
-    const planeGeometry = new THREE.PlaneGeometry(3, 3);
-    const planeMaterial = new THREE.MeshBasicMaterial({ visible: false });
-    const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    const plane = new THREE.Object3D();
     plane.add(icon);
 
     plane.position.set(
@@ -60,15 +58,19 @@ $(document).ready(function() {
     scene.add(plane);
 
     // Tween for smooth animation
-    new TWEEN.Tween(plane.position)
-      .to({
-        x: (Math.random() - 0.5) * 40,
-        y: (Math.random() - 0.5) * 20,
-        z: (Math.random() - 0.5) * 20
-      }, 5000)
-      .repeat(Infinity)
-      .yoyo(true)
-      .start();
+    const updatePosition = () => {
+      new TWEEN.Tween(plane.position)
+        .to({
+          x: (Math.random() - 0.5) * 40,
+          y: (Math.random() - 0.5) * 20,
+          z: (Math.random() - 0.5) * 20
+        }, 5000)
+        .easing(TWEEN.Easing.Quadratic.InOut)
+        .onComplete(updatePosition)
+        .start();
+    };
+
+    updatePosition();
   });
 
   camera.position.z = 30;
