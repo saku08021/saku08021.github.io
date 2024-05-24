@@ -63,6 +63,7 @@ header p {
   height: 600px;
   margin: 50px 0;
   background: linear-gradient(to bottom right, #141e30, #243b55);
+  position: relative;
 }
 
 .skills {
@@ -131,7 +132,7 @@ header p {
   margin-right: 10px;
 }
 
-contact p {
+.contact p {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
