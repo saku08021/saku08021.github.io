@@ -1,307 +1,125 @@
-/* 基本設定 */
-body {
-  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
-  background-color: #1e272e; /* ダークグレー */
-  color: #eee; 
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+$(document).ready(function() {
+  // シーン、カメラ、レンダラーを初期化
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.getElementById('scene-container').appendChild(renderer.domElement);
 
-h1, h2, h3, h4 {
-  font-weight: 700;
-}
+  // 環境光を追加
+  const ambientLight = new THREE.AmbientLight(0x404040);
+  scene.add(ambientLight);
 
-h1, h2, h4 {
-  font-family: '游ゴシック体', 'Yu Gothic', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
-}
+  // スポットライトを追加
+  const spotLight = new THREE.SpotLight(0xffffff, 1.5); // 光の強さを調整
+  spotLight.position.set(0, 10, 10); // スポットライトの位置を調整
+  scene.add(spotLight);
 
-p {
-  font-family: '游明朝体', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', serif; 
-}
+  // 実績データ
+  const achievementsData = [
+    { type: 'sns', title: 'Twitterフォロワー最大数', value: '130,000人', geometry: new THREE.SphereGeometry(2, 32, 32), color: 0x1DA1F2 }, // Twitterカラー
+    { type: 'sns', title: 'YouTube登録者最大数', value: '50,000人', geometry: new THREE.TorusGeometry(2, 0.8, 16, 100), color: 0xFF0000 }, // YouTubeカラー
+    { type: 'sns', title: 'Instagramフォロワー最大数', value: '20,000人', geometry: new THREE.DodecahedronGeometry(2), color: 0xE1306C }, // Instagramカラー
+    { type: 'sns', title: '1日のリスト獲得最大数', value: '1,000人', geometry: new THREE.ConeGeometry(2, 3, 32), color: 0x00FFFF },
+    { type: 'contents', title: '担当コンテンツ売上', value: '3ヶ月で200%増加', geometry: new THREE.BoxGeometry(3, 3, 3), color: 0x00FF00 }, // 緑
+    { type: 'contents', title: '会社売上', value: '半年で社内利益180%達成', geometry: new THREE.OctahedronGeometry(2), color: 0xFFFF00 }, // 黄
+    { type: 'consulting', title: '業務効率化コンサルティング', value: 'マーケティングコスト35%減', geometry: new THREE.CylinderGeometry(2, 2, 4, 32), color: 0x800080 }, // 紫
+    { type: 'consulting', title: 'マーケティングコンサルティング', value: '売上200%達成', geometry: new THREE.IcosahedronGeometry(2), color: 0xFFA500 } // オレンジ
+  ];
 
-a {
-  color: #EA5455; /* アクセントカラーに変更 */
-  text-decoration: none;
-  transition: color 0.3s ease; 
-}
+  // 実績オブジェクトを作成
+  const achievementObjects = [];
+  achievementsData.forEach((data, index) => {
+    const material = new THREE.MeshLambertMaterial({ color: data.color });
+    const object = new THREE.Mesh(data.geometry, material);
 
-a:hover {
-  color: #FF9F43; /* アクセントカラーに変更 */
-}
+    // ランダムな位置に配置
+    object.position.set(
+      (Math.random() - 0.5) * 20,
+      (Math.random() - 0.5) * 10,
+      (Math.random() - 0.5) * 10
+    );
 
-/* ローディング画面 */
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1e272e; /* ダークグレー */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; 
-}
+    // オブジェクトに実績データを関連付ける
+    object.userData = data;
 
-.loading-icon {
-  font-size: 3em;
-  color: #00a8ff; /* 鮮やかな青 */
-}
+    achievementObjects.push(object);
+    scene.add(object);
+  });
 
-/* ヘッダー */
-header {
-  background: linear-gradient(to right, #1e272e, #353b48); /* シックなダークトーン */
-  padding: 30px 0;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
+  // カメラの初期位置
+  camera.position.z = 30;
 
-header .header-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  // アニメーションループ
+  function animate() {
+    requestAnimationFrame(animate);
 
-header .header-content i {
-  margin-right: 10px;
-}
+    // オブジェクトをランダムに移動させる
+    achievementObjects.forEach(object => {
+      object.position.x += (Math.random() - 0.5) * 0.1;
+      object.position.y += (Math.random() - 0.5) * 0.1;
+      object.position.z += (Math.random() - 0.5) * 0.1;
+      object.rotation.x += 0.01;
+      object.rotation.y += 0.01;
+    });
 
-header h1 {
-  font-size: 3em;
-  margin: 0;
-}
-
-header p {
-  font-size: 1.2em;
-  margin-bottom: 0;
-}
-
-/* 実績セクション */
-.achievements {
-  padding: 80px 0;
-  text-align: center;
-  background-color: #1e272e; /* ダークグレー */
-}
-
-.achievements h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #eee;
-}
-
-.achievement-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.achievement-category {
-  background-color: #353b48; /* チャコールグレー */
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #eee;
-  overflow: hidden; /* ポップアップがはみ出さないように */
-}
-
-.achievement-category h3 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.achievement-items {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.achievement-item {
-  background-color: #283139; /* さらに暗いダークグレー */
-  border-radius: 5px;
-  padding: 20px;
-  cursor: pointer;
-  position: relative; /* ポップアップの配置のために必要 */
-  transition: all 0.3s ease; /* ホバー時のアニメーションを追加 */
-}
-
-.achievement-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.achievement-item h3 {
-  font-size: 1.2em;
-  margin-bottom: 0;
-}
-
-.achievement-title {
-  color: #00a8ff; /* 鮮やかな青 */
-}
-
-/* ポップアップ */
-.achievement-popup {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  border-radius: 5px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-}
-
-.achievement-popup.show {
-  bottom: 0;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.achievement-popup h4 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-
-.achievement-popup p {
-  font-size: 1em;
-}
-
-/* スキルセットセクション */
-.skills {
-  padding: 80px 0;
-  text-align: center;
-  background-color: #283139; 
-}
-
-.skills h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #eee;
-}
-
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.skill-item {
-  background-color: #353b48;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  color: #eee;
-}
-
-.skill-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.skill-item i {
-  font-size: 3em;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.skill-item h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.skill-item p {
-  font-size: 0.9em;
-}
-
-/* お問い合わせセクション */
-.contact {
-  padding: 80px 0;
-  text-align: center;
-  background-color: #1e272e; 
-}
-
-.contact h2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #eee;
-}
-
-.contact h2 i {
-  margin-right: 10px;
-}
-
-.contact p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-/* フッター */
-footer {
-  background-color: #000;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.social-links {
-  margin-top: 10px;
-}
-
-.social-links a {
-  margin: 0 5px;
-}
-
-/* コンテンツエリア */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* レスポンシブデザイン */
-@media screen and (max-width: 768px) {
-  .achievement-grid, .skill-grid, .portfolio-grid {
-    grid-template-columns: 1fr;
+    renderer.render(scene, camera);
   }
 
-  .achievement-items {
-    display: block; /* スマホでは縦並び */
+  animate();
+
+  // ウィンドウリサイズ時の処理
+  $(window).resize(function() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+  });
+
+  // マウス座標
+  const mouse = new THREE.Vector2();
+
+  // マウス移動時のイベントリスナー
+  window.addEventListener('mousemove', onMouseMove, false);
+
+  function onMouseMove(event) {
+    // マウス座標を正規化
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
   }
 
-  .achievement-popup {
-    position: static; /* スマホではポップアップではなく、通常のブロック */
-    width: auto;
-    height: auto;
-    background-color: transparent;
-    display: block;
-    padding: 0;
+  // レイキャスト
+  const raycaster = new THREE.Raycaster();
+
+  // クリックイベントリスナー
+  window.addEventListener('click', onClick, false);
+
+  function onClick() {
+    // レイキャストを設定
+    raycaster.setFromCamera(mouse, camera);
+
+    // オブジェクトとの交差を判定
+    const intersects = raycaster.intersectObjects(achievementObjects);
+
+    if (intersects.length > 0) {
+      const clickedObject = intersects[0].object;
+
+      // ポップアップを表示
+      const popup = $(`
+        <div class="popup">
+          <h3>${clickedObject.userData.title}</h3>
+          <p>${clickedObject.userData.value}</p>
+          <button class="close-button">閉じる</button>
+        </div>
+      `);
+      $('body').append(popup);
+      popup.fadeIn(200);
+
+      // ポップアップを閉じるボタン
+      $('.close-button').on('click', function() {
+        popup.fadeOut(200, function() {
+          $(this).remove();
+        });
+      });
+    }
   }
-}
-
-/* フォーム */
-.form-item {
-  margin-bottom: 15px;
-}
-
-.form-item input[type="text"],
-.form-item input[type="email"],
-.form-item textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #181818;
-  color: #eee; 
-}
+});
