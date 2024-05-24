@@ -19,32 +19,27 @@ $(document).ready(function() {
   scene.add(spotLight);
 
   const achievementsData = [
-    { type: 'sns', title: 'Twitterフォロワー最大数', value: '130,000人', icon: 'fab fa-twitter', color: 0x1DA1F2 },
-    { type: 'sns', title: 'YouTube登録者最大数', value: '50,000人', icon: 'fab fa-youtube', color: 0xFF0000 },
-    { type: 'sns', title: 'Instagramフォロワー最大数', value: '20,000人', icon: 'fab fa-instagram', color: 0xE1306C },
-    { type: 'sns', title: '1日のリスト獲得最大数', value: '1,000人', icon: 'fas fa-list', color: 0x00FFFF },
-    { type: 'contents', title: '担当コンテンツ売上', value: '3ヶ月で200%増加', icon: 'fas fa-chart-line', color: 0x00FF00 },
-    { type: 'contents', title: '会社売上', value: '半年で社内利益180%達成', icon: 'fas fa-building', color: 0xFFFF00 },
-    { type: 'consulting', title: '業務効率化コンサルティング', value: 'マーケティングコスト35%減', icon: 'fas fa-chart-pie', color: 0x800080 },
-    { type: 'consulting', title: 'マーケティングコンサルティング', value: '売上200%達成', icon: 'fas fa-comments', color: 0xFFA500 }
+    { type: 'sns', title: 'Twitterフォロワー最大数', value: '130,000人', icon: 'fab fa-twitter', color: '#1DA1F2' },
+    { type: 'sns', title: 'YouTube登録者最大数', value: '50,000人', icon: 'fab fa-youtube', color: '#FF0000' },
+    { type: 'sns', title: 'Instagramフォロワー最大数', value: '20,000人', icon: 'fab fa-instagram', color: '#E1306C' },
+    { type: 'sns', title: '1日のリスト獲得最大数', value: '1,000人', icon: 'fas fa-list', color: '#00FFFF' },
+    { type: 'contents', title: '担当コンテンツ売上', value: '3ヶ月で200%増加', icon: 'fas fa-chart-line', color: '#00FF00' },
+    { type: 'contents', title: '会社売上', value: '半年で社内利益180%達成', icon: 'fas fa-building', color: '#FFFF00' },
+    { type: 'consulting', title: '業務効率化コンサルティング', value: 'マーケティングコスト35%減', icon: 'fas fa-chart-pie', color: '#800080' },
+    { type: 'consulting', title: 'マーケティングコンサルティング', value: '売上200%達成', icon: 'fas fa-comments', color: '#FFA500' }
   ];
 
   const achievementObjects = [];
   achievementsData.forEach((data, index) => {
-    const planeGeometry = new THREE.PlaneGeometry(3, 3);
-    const material = new THREE.MeshBasicMaterial({ 
-      color: data.color, 
-      transparent: true,
-      opacity: 0.8
-    });
-    const plane = new THREE.Mesh(planeGeometry, material);
-
-    const iconHTML = `<i class="${data.icon} fa-2x"></i>`;
     const element = document.createElement('div');
-    element.innerHTML = iconHTML;
+    element.innerHTML = `<i class="${data.icon} fa-2x" style="color:${data.color};"></i>`;
     element.className = 'label';
     const icon = new THREE.CSS2DObject(element);
     icon.position.set(0, 0, 0.1);
+
+    const planeGeometry = new THREE.PlaneGeometry(3, 3);
+    const planeMaterial = new THREE.MeshBasicMaterial({ visible: false });
+    const plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.add(icon);
 
     plane.position.set(
@@ -63,18 +58,24 @@ $(document).ready(function() {
 
     achievementObjects.push(plane);
     scene.add(plane);
+
+    // Tween for smooth animation
+    new TWEEN.Tween(plane.position)
+      .to({
+        x: (Math.random() - 0.5) * 40,
+        y: (Math.random() - 0.5) * 20,
+        z: (Math.random() - 0.5) * 20
+      }, 5000)
+      .repeat(Infinity)
+      .yoyo(true)
+      .start();
   });
 
   camera.position.z = 30;
 
-  function animate() {
+  function animate(time) {
     requestAnimationFrame(animate);
-
-    achievementObjects.forEach(object => {
-      object.position.x += (Math.random() - 0.5) * 0.1;
-      object.position.y += (Math.random() - 0.5) * 0.1;
-      object.position.z += (Math.random() - 0.5) * 0.1;
-    });
+    TWEEN.update(time);
 
     renderer.render(scene, camera);
     labelRenderer.render(scene, camera);
