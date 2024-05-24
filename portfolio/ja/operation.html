@@ -16,31 +16,7 @@
     </div>
   </header>
 
-  <section class="achievements" id="achievements">
-    <div class="container">
-      <h2>実績</h2>
-      <div class="achievement-grid">
-        <div class="achievement-category" data-category="sns">
-          <h3>SNS</h3>
-          <div class="achievement-items" id="sns-achievements">
-            <!--ここに実績内容が入る-->
-          </div>
-        </div>
-        <div class="achievement-category" data-category="contents">
-          <h3>コンテンツ販売</h3>
-          <div class="achievement-items" id="contents-achievements">
-            <!--ここに実績内容が入る-->
-          </div>
-        </div>
-        <div class="achievement-category" data-category="consulting">
-          <h3>コンサルティング</h3>
-          <div class="achievement-items" id="consulting-achievements">
-            <!--ここに実績内容が入る-->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section id="scene-container"></section>
 
   <section class="skills" id="skills">
     <div class="container">
@@ -95,96 +71,12 @@
       <div class="social-links">
         <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
         <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
-        <!-- 他のSNSを追加 -->
       </div>
     </div>
   </footer>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="assets/js/operation.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    $(document).ready(function() {
-      $(window).on('load', function(){
-        $(".loading").fadeOut(300);
-      });
-
-      AOS.init();
-
-      // カウントアップアニメーション
-      function countUp(className) {
-        let elements = document.querySelectorAll(className);
-
-        elements.forEach(element => {
-          let targetNumber = parseInt(element.textContent, 10);
-          let currentNumber = 0;
-          let duration = 3000; 
-          let increment = targetNumber / (duration / 10); 
-
-          let timer = setInterval(() => {
-            currentNumber += increment;
-            element.textContent = Math.ceil(currentNumber);
-
-            if (currentNumber >= targetNumber) {
-              clearInterval(timer);
-              element.textContent = targetNumber;
-            }
-          }, 10);
-        });
-      }
-
-      countUp('.count');
-
-      // 実績データ
-      const achievementsData = {
-        sns: [
-          { title: 'Twitterフォロワー最大数', detail: '0→13万人達成 (その他万垢多数達成)' },
-          { title: 'YouTube登録者最大数', detail: '0→5万人達成' },
-          { title: 'Instagramフォロワー最大数', detail: '20,000人達成' },
-          { title: '1日のリスト獲得最大数', detail: '1,000人達成' }
-        ],
-        contents: [
-          { title: '担当コンテンツ売上', detail: '3ヶ月で200%増加' },
-          { title: '会社売上', detail: '半年で社内利益180%達成' }
-        ],
-        consulting: [
-          { title: '業務効率化コンサルティング', detail: 'コンテンツ作成における業務の効率化、SNS運用,コンテンツ販売の半自動化を行いマーケティングコスト35%減。' },
-          { title: 'マーケティングコンサルティング', detail: 'リード獲得数増加に伴い売上200%達成' }
-        ]
-      };
-
-      // 実績項目の動的生成
-      function createAchievementItems(category) {
-        const container = $(`#${category}-achievements`);
-        achievementsData[category].forEach((item, index) => {
-          const achievementItem = $(`
-            <div class="achievement-item" data-aos="fade-up" data-aos-delay="${index * 100}">
-              <h3 class="achievement-title">${item.title}</h3>
-              <div class="achievement-popup">
-                <h4>${item.title}</h4>
-                <p>${item.detail}</p>
-              </div>
-            </div>
-          `);
-          container.append(achievementItem);
-
-          // ホバーでポップアップ表示
-          achievementItem.hover(
-            function() {
-                $(this).find('.achievement-popup').addClass('show');
-            }, 
-            function() {
-                $(this).find('.achievement-popup').removeClass('show');
-            }
-          );
-        });
-      }
-
-      // 各カテゴリーの実績項目を生成
-      createAchievementItems('sns');
-      createAchievementItems('contents');
-      createAchievementItems('consulting');
-    });
-  </script>
 </body>
 </html>
