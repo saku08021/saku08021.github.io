@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-weight: 700;
 }
 
@@ -22,30 +22,10 @@ a:hover {
   color: #66d9ff;
 }
 
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1e272e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.loading-icon {
-  font-size: 3em;
-  color: #00a8ff;
-}
-
 header {
   background: linear-gradient(to right, #1e272e, #353b48);
   padding: 30px 0;
   text-align: center;
-  position: relative;
-  z-index: 2;
 }
 
 header .header-content {
@@ -59,82 +39,77 @@ header .header-content i {
 }
 
 .hero-section {
+  position: relative;
   text-align: center;
-  padding: 50px;
-  background: linear-gradient(to right, #1e272e, #353b48);
+  padding: 100px 20px;
   color: #fff;
 }
 
-.achievement-bar {
-  background-color: #ddd;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 20px 0;
+.hero-section .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.bar {
-  height: 20px;
-  background-color: #28a745;
-  transition: width 2s;
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
-.achievement-count {
-  font-size: 3em;
-  animation: countup 3s ease-out;
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #00a8ff;
+  color: #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-.quests {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 0;
+.cta-button:hover {
+  background-color: #007bff;
+}
+
+.skills-section, .details-section {
+  padding: 50px 20px;
   background-color: #f5f5f5;
+  color: #333;
 }
 
-.quest {
-  position: relative;
-  margin: 20px 0;
+.skill {
+  display: inline-block;
+  width: 30%;
+  margin: 1.5%;
+  text-align: center;
   padding: 20px;
   background: #fff;
-  border: 1px solid #ddd;
   border-radius: 5px;
-  width: 80%;
-  text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
-.quest:hover {
+.skill:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.skill-tree {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 50px 0;
-  background-color: #fff;
+.detail-content {
+  display: none;
 }
 
-.skill-node {
-  margin: 20px;
-  padding: 20px;
-  background: #f5f5f5;
-  border-radius: 5px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.skill-node:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.skill-node i {
-  margin-bottom: 10px;
-  color: #007bff;
+.active {
+  display: block;
 }
 
 footer {
@@ -149,17 +124,10 @@ footer {
 
 .social-links a {
   margin: 0 5px;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-@media screen and (max-width: 768px) {
-  .quest,
-  .skill-node {
-    width: 100%;
-  }
+.social-links a:hover {
+  color: #66d9ff;
 }
