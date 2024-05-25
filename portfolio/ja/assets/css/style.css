@@ -86,6 +86,7 @@ header p {
   background-color: #353b48; 
   overflow: hidden;
   position: relative;
+  perspective: 1000px; /* 3D効果のための視差 */
 }
 
 .career::before {
@@ -116,9 +117,17 @@ header p {
 
 .career-item {
   padding: 30px;
-  background-color: #353b48;
+  background-color: rgba(53, 59, 72, 0.8); /* 背景色を少し透明に */
   border-radius: 10px;
   text-align: center;
+  opacity: 0; /* 初期状態では非表示 */
+  transform: rotateX(-30deg) translateZ(-100px); /* 初期位置を奥に */
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out; /* アニメーションのプロパティ */
+}
+
+.career-item.slick-active {
+  opacity: 1; /* アクティブになったら表示 */
+  transform: rotateX(0deg) translateZ(0); /* 手前に移動 */
 }
 
 .career-item h3 {
