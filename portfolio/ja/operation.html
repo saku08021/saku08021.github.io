@@ -6,11 +6,14 @@
   <title>My Portfolio - 運用実績</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/operation_style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS2DRenderer.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
 </head>
 <body>
+  <div class="loading">
+    <div class="loading-icon">
+      <i class="fas fa-spinner fa-spin fa-3x"></i>
+    </div>
+  </div>
+
   <header>
     <div class="container">
       <div class="header-content">
@@ -19,52 +22,35 @@
     </div>
   </header>
 
-  <section id="scene-container" style="position: relative; width: 100%; height: 600px; overflow: hidden;"></section>
+  <section class="hero-section">
+    <h1>My Achievements</h1>
+    <div class="achievement-bar">
+      <div class="bar" style="width: 80%;"></div>
+    </div>
+    <div class="achievement-count" id="followers-count">0</div>
+  </section>
 
-  <section class="skills" id="skills">
-    <div class="container">
-      <h2>スキルセット</h2>
-      <div class="skill-grid">
-        <div class="skill-item" data-aos="fade-up">
-          <i class="fab fa-twitter fa-4x" style="color:#1DA1F2;"></i>
-          <h3>SNSマーケティング</h3>
-          <p>Twitter, Instagram, Youtubeなど<br>各プラットフォームの特性を活かした<br>戦略立案と運用</p>
-        </div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-chart-line fa-4x" style="color:#00FF00;"></i>
-          <h3>Web解析</h3>
-          <p>Google Analyticsなどを活用した<br>アクセス状況分析、課題発見、<br>改善提案</p>
-        </div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
-          <i class="fas fa-search fa-4x" style="color:#FFA500;"></i>
-          <h3>SEO</h3>
-          <p>キーワード調査、コンテンツSEO、<br>テクニカルSEOなど、検索エンジンに<br>最適化されたサイト構築</p>
-        </div>
-        <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
-          <i class="fas fa-bullhorn fa-4x" style="color:#EA5455;"></i>
-          <h3>広告運用</h3>
-          <p>リスティング広告、ディスプレイ広告など<br>各種広告媒体の運用と効果測定</p>
-        </div>
-      </div>
+  <section class="quests">
+    <div class="quest" data-aos="fade-up">
+      <h3>Quest: Increase Followers</h3>
+      <p>Achieved: <span class="count">250000</span> Followers</p>
+    </div>
+    <div class="quest" data-aos="fade-up" data-aos-delay="100">
+      <h3>Quest: Boost Sales</h3>
+      <p>Achieved: <span class="count">150%</span> Profit Increase</p>
     </div>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2><i class="fas fa-envelope fa-lg"></i> お問い合わせ</h2>
-      <p>ご依頼やご相談は、お気軽にご連絡ください。</p>
-      <form action="#" method="post">
-        <div class="form-item">
-          <input type="text" name="name" placeholder="お名前" required>
-        </div>
-        <div class="form-item">
-          <input type="email" name="email" placeholder="メールアドレス" required>
-        </div>
-        <div class="form-item">
-          <textarea name="message" placeholder="お問い合わせ内容" required></textarea>
-        </div>
-        <button type="submit" class="btn">送信</button>
-      </form>
+  <section class="skill-tree">
+    <div class="skill-node" data-aos="fade-up">
+      <i class="fab fa-twitter fa-2x"></i>
+      <h3>SNSマーケティング</h3>
+      <p>Twitter, Instagram, YouTube</p>
+    </div>
+    <div class="skill-node" data-aos="fade-up" data-aos-delay="100">
+      <i class="fas fa-chart-line fa-2x"></i>
+      <h3>Web解析</h3>
+      <p>Google Analytics, SEO</p>
     </div>
   </section>
 
@@ -79,6 +65,7 @@
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="assets/js/operation.js"></script>
 </body>
 </html>
