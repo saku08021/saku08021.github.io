@@ -28,16 +28,16 @@
     <div class="container">
       <h2>職歴</h2>
       <div class="career-slider">
-        <div class="career-item">
+        <div class="career-item" data-aos="fade-up" data-aos-delay="100">
           <h3>2019~中高生向けの個人塾経営を行う</h3>
         </div>
-        <div class="career-item">
+        <div class="career-item" data-aos="fade-up" data-aos-delay="200">
           <h3>2021~マーケティング会社にマーケティング責任者として参画</h3>
         </div>
-        <div class="career-item">
+        <div class="career-item" data-aos="fade-up" data-aos-delay="300">
           <h3>2022~個人事業主として戦略コンサルを行う</h3>
         </div>
-        <div class="career-item">
+        <div class="career-item" data-aos="fade-up" data-aos-delay="400">
           <h3>2022~SaaS開発企業に取締役として参画</h3>
         </div>
       </div>
@@ -204,13 +204,13 @@
 
     $('.career-slider').slick({
       autoplay: true,
-      autoplaySpeed: 1000,
+      autoplaySpeed: 3000, // 自動再生の速度を3秒に変更
       arrows: false,
       dots: false,
       infinite: true,
-      speed: 300,
+      speed: 800,          // スライドの速度を800msに変更
       fade: true,
-      cssEase: 'linear',
+      cssEase: 'ease-out', // イージングを変更
       // レスポンシブ設定を追加
       responsive: [
         {
