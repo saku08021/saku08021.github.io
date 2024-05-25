@@ -6,17 +6,17 @@ on:
       - main  # デプロイするブランチを指定
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # 最新バージョンに更新
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3  # 最新バージョンに更新
         with:
-          node-version: '14'  # Node.js のバージョンを指定
+          node-version: '20'  # Node.js のバージョンを更新
 
       - name: Install dependencies
         run: npm install
@@ -29,4 +29,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public  # 公開ディレクトリを指定
-
