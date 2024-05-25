@@ -2,7 +2,10 @@ $(window).on('load', function() {
   $(".loading").fadeOut(300);
 });
 
-AOS.init();
+AOS.init({
+  once: true,  // アニメーションを一度だけ実行
+  duration: 1000  // アニメーションの継続時間
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   const countEl = document.getElementById('followers-count');
