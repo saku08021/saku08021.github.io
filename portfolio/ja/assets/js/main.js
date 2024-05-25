@@ -38,7 +38,7 @@ $(document).ready(function() {
     arrows: false,
     dots: false,
     infinite: true,
-    speed: 800,          // スライドの速度を800msに変更
+    speed: 500,          // スライドの速度を800msに変更
     fade: true,
     cssEase: 'ease-out', // イージングを変更
     // レスポンシブ設定を追加
