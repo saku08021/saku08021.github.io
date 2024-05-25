@@ -31,4 +31,3 @@ document.querySelectorAll('.skill-node, .quest').forEach(item => {
     alert('Detail information displayed here');
   });
 });
-
