@@ -3,76 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>マーケティング実績 - 山川朔弥</title>
+  <title>My Portfolio - 運用実績</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/marketing_style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="assets/css/operation_style.css">
 </head>
 <body>
+  <div class="loading">
+    <div class="loading-icon">
+      <i class="fas fa-spinner fa-spin fa-3x"></i>
+    </div>
+  </div>
+
   <header>
     <div class="container">
       <div class="header-content">
-        <a href="index.html"><i class="fas fa-home fa-2x"></i></a> <span>マーケティング実績</span>
+        <a href="index.html"><i class="fas fa-home fa-2x"></i></a> <span>運用実績</span>
       </div>
     </div>
   </header>
 
   <section class="hero-section">
-    <h1>成功への道をビジュアルで</h1>
-    <video autoplay muted loop class="background-video">
-      <source src="assets/videos/hero-video.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
-    <a href="#contact" class="cta-button">お問い合わせ</a>
+    <h1>My Achievements</h1>
+    <div class="achievement-bar">
+      <div class="bar" style="width: 80%;"></div>
+    </div>
+    <div class="achievement-count" id="followers-count">0</div>
   </section>
 
-  <section class="skills-section">
-    <h2>スキル</h2>
-    <div class="skill" data-target="twitter">
+  <section class="quests">
+    <div class="quest" data-aos="fade-up">
+      <h3>Quest: Increase Followers</h3>
+      <p>Achieved: <span class="count">250000</span> Followers</p>
+    </div>
+    <div class="quest" data-aos="fade-up" data-aos-delay="100">
+      <h3>Quest: Boost Sales</h3>
+      <p>Achieved: <span class="count">150%</span> Profit Increase</p>
+    </div>
+  </section>
+
+  <section class="skill-tree">
+    <div class="skill-node" data-aos="fade-up">
       <i class="fab fa-twitter fa-2x"></i>
       <h3>SNSマーケティング</h3>
       <p>Twitter, Instagram, YouTube</p>
     </div>
-    <div class="skill" data-target="analytics">
+    <div class="skill-node" data-aos="fade-up" data-aos-delay="100">
       <i class="fas fa-chart-line fa-2x"></i>
       <h3>Web解析</h3>
       <p>Google Analytics, SEO</p>
-    </div>
-    <div class="skill" data-target="project-management">
-      <i class="fas fa-project-diagram fa-2x"></i>
-      <h3>プロジェクト管理</h3>
-      <p>プロジェクト推進、課題解決</p>
-    </div>
-  </section>
-
-  <section class="details-section" id="details">
-    <h2>詳細</h2>
-    <div id="twitter" class="detail-content">
-      <h3>Twitterマーケティング</h3>
-      <h4>問題点</h4>
-      <p>アカウントのフォロワー数が少なく、エンゲージメントが低かった。</p>
-      <h4>解決策</h4>
-      <p>コンテンツ戦略を見直し、ターゲットオーディエンスに合わせた投稿を増やし、フォロワーと積極的に交流しました。</p>
-      <h4>結果</h4>
-      <p>フォロワー数が0から13万人に増加し、エンゲージメント率も大幅に向上しました。</p>
-    </div>
-    <div id="analytics" class="detail-content">
-      <h3>Web解析</h3>
-      <h4>問題点</h4>
-      <p>サイトの訪問者数が低く、コンバージョン率が期待以下だった。</p>
-      <h4>解決策</h4>
-      <p>Google Analyticsを使用して訪問者の行動を分析し、問題点を特定し改善策を実施しました。</p>
-      <h4>結果</h4>
-      <p>訪問者数が増加し、コンバージョン率も改善されました。</p>
-    </div>
-    <div id="project-management" class="detail-content">
-      <h3>プロジェクト管理</h3>
-      <h4>問題点</h4>
-      <p>プロジェクトの進行が遅れがちで、コミュニケーション不足が課題だった。</p>
-      <h4>解決策</h4>
-      <p>プロジェクト管理ツールを導入し、定期的なミーティングを開催して進行状況を共有しました。</p>
-      <h4>結果</h4>
-      <p>プロジェクトが予定通りに進行し、コミュニケーションが改善されました。</p>
     </div>
   </section>
 
@@ -86,6 +64,8 @@
     </div>
   </footer>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="assets/js/aos.js"></script>
   <script src="assets/js/operation.js"></script>
 </body>
 </html>
